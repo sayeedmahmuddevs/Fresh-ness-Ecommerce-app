@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/style/index.css">
+  <link rel="stylesheet" href="./src/style/custom.css">
+  <script src="https://kit.fontawesome.com/1f7fbc12ba.js" crossorigin="anonymous"></script>
+  <title>fresh-ness</title>
+</head>
+
+<body class="pt-35">
+
+  <header id="header" class="fixed z-50 w-[100%] top-0 transition-transform duration-800">
+    <section class="contentContain z-50 bg-white border-b-2 border-green-400/10 p-1">
+      <section class="flex justify-between items-center">
+
+        <!-- mobile menu -->
+        <div id="mobileMenu" class="lg:hidden flex flex-col gap-1">
+          <span class="inline-block w-8 h-[3px] bg-black"></span>
+          <span class="inline-block w-8 h-[3px] bg-black"></span>
+          <span class="inline-block w-8 h-[3px] bg-black"></span>
+          <!-- iconBar and SearchBar -->
+        </div>
+
+        <h1 class="text-4xl font-bold text-red-400">Fresh<span class="text-green-400">Ness</span></h1>
+        <div class="hidden lg:block w-[50%]">
+          <div class="flex overflow-hidden border rounded-3xl">
+            <input class="p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+              placeholder="Search for products">
+            <span class="bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
+                class="fa-solid fa-magnifying-glass"></i></span>
+          </div>
+        </div>
+
+        <!-- shopBar -->
+        <div class="flex gap-4">
+          <span class="p-3 text-2xl relative"><i class="fa-regular fa-user"></i> </span>
+          <span class="p-3 text-2xl relative"><i class="relative fa-regular fa-heart"><span
+                class="flex justify-center items-center size-4 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-red-500 text-[13px] ">0</span></i></span>
+          <span class="p-3 text-2xl relative"><i class="relative fa-solid fa-cart-shopping"><span
+                class="flex justify-center items-center size-4 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-green-500 text-[13px] ">0</span></i></span>
+        </div>
+      </section>
+
+      <hr class="my-2 opacity-0 lg:opacity-20">
+
+      <!-- navBAr -->
+      <nav>
+        <section id="mobileNav"
+          class="absolute bg-white lg:w-[88%] w-[300px] h-[85vh] lg:h-10 mt-2 flex flex-col lg:flex-row justify-between lg:items-center -translate-x-100 lg:translate-x-0 transition all">
+          <!-- searchMenu -->
+          <div class="lg:hidden">
+            <div class="bg-blue-500 px-2 text-white mb-2 flex justify-between items-center">
+              <h1 class="text-2xl font-bold py-5">FreshNess</h1>
+              <span class="inline-block text-3xl"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div>
+              <div class="flex overflow-hidden border rounded-xl w-[100%] ">
+                <input class="p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+                  placeholder="Search for products">
+                <span class="bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
+                    class="fa-solid fa-magnifying-glass"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- nav List -->
+          <ul
+            class="flex flex-col gap-9 lg:gap-0 pl-2 lg:flex-row  justify-items-start lg:justify-between text-lg font-semibold lg:w-[50%]">
+
+            <li class="hover:text-green-500 relative cursor-pointer">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all after:w-[30px] text-green-500"
+                href="">Home</a>
+            </li>
+            <li class="hover:text-green-500 cursor-pointer relative">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="./src/htmlComponent/about.html">All Groceries</a>
+            </li>
+            <li id="" class="lg:relative group cursor-pointer">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="">
+                <div class="hover:text-green-500">Category<i class="fa-solid fa-caret-down"></i></div>
+
+                <!-- submenu -->
+                <ul
+                  class="hidden lg:block group translate-y-4 invisible opacity-0 lg:absolute w-[200px] bg-gray-100 px-2 rounded lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0 duration-50">
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">All Grocerice</a></li>
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">Vegetables</a></li>
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">Fruits</a></li>
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">Dairy</a></li>
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">Beverages</a></li>
+                </ul>
+              </a>
+
+            </li>
+
+            <li class="hover:text-green-500 cursor-pointer relative">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="">About</a>
+            </li>
+            <li class="hover:text-green-500 cursor-pointer relative">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="">Service</a>
+            </li>
+            <li class="hover:text-green-500 cursor-pointer relative">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="">Contact</a>
+            </li>
+          </ul>
+
+          <!-- contact -->
+          <div class="lg:w-[35%] flex flex-col lg:flex-row justify-between items-center">
+            <h3 class="duration-75 font-semibold disconAnimation"><span class="text-green-500">% </span>Weekly Discount
+            </h3>
+            <div class="bg-blue-500 flex gap-2 text-white p-0.5 rounded w-[100%] lg:w-[50%]">
+              <span><i class="fa-solid fa-phone"></i></span>
+              <div class="flex flex-col gap-[-10px] text-sm">
+                <span>Hotline</span>
+                <span class="px-0">+0880 1938473645</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </nav>
+    </section>
+  </header>
+  <!-- header Ended -->
+
+
+  <!-- ===================== main Start ================================ -->
+  <main>
+    <!-- unique categories -->
+    <section id="totalProducts" class="contentContain flex gap-13 mb-15  overflow-x-scroll no-scrollbar"></section>
+
+    <!-- hero section -->
+    <section class="contentContain grid lg:grid-cols-12 gap-3">
+      <!-- hero left side -->
+      <div class="lg:col-span-8 col-span-12 relative rounded-4xl overflow-hidden">
+        <video autoplay loop muted class="object-fill h-full z-0 ">
+          <source src="./src/assets/bgvd.mp4" type="video/mp4">
+        </video>
+        <div class="absolute top-0 left-0">
+          <span
+            class="inline-block md:mt-10 sm:mt-10 mt-5 ml-20 px-5 py-2 rounded-2xl bg-blue-500 font-bold text-white md:text-2xl sm:text-[15px] text-[10px] ">100%
+            FARM FRESH FOOD</span>
+          <h1 class="md:mt-10 sm:mt-5 mt-3 ml-20 md:text-7xl text-3xl font-bold text-white ">Fresh Organic</h1>
+          <h1 class="mt-2 ml-20 md:text-7xl text-3xl font-bold text-yellow-500 ">Food For All</h1>
+          <h3 class="mt-3 ml-20 md:text-5xl text-2xl font-bold text-white ">$59.00</h3>
+          <button
+            class="px-4 py-2 ml-20 lg:mt-30 sm:mt-10 mt-5 lg:text-2xl text-xl bg-blue-500 rounded-3xl text-white hover:text-blue-500 hover:bg-white transition-all font-bold">Shop
+            Now</button>
+        </div>
+
+      </div>
+
+      <!-- hero right side -->
+      <div class="grid lg:col-span-4 col-span-12 gap-3 grid-row-2">
+
+        <div
+          class="row-span-1 pb-10 max-w-[1340px] lg: rounded-4xl bg-[url(/src/assets/bg-frutes-1.png)] bg-no-repeat bg-cover max-w-[900px] hover:scale-101 ">
+
+          <div>
+            <h1 class="mt-10 ml-15 text-4xl font-bold text-white ">Creamy Fruits</h1>
+            <h1 class="mt-2 ml-15 text-4xl font-bold text-yellow-500 ">Baby jem</h1>
+            <h3 class="mt-3 ml-15 text-3xl font-bold text-white">only for<span class="text-yellow-500">$12.99</span>
+            </h3>
+            <button
+              class="px-4 py-2 ml-15 mt-10 text-md bg-blue-500 rounded-3xl text-white hover:text-blue-500 hover:bg-white transition-all font-bold">Shop
+              Now</button>
+          </div>
+
+        </div>
+        <div class="row-span-1 grid grid-cols-2 gap-4">
+
+          <div
+            class="col-span-1 rounded-4xl bg-[url(/src/assets/desert.png)] bg-no-repeat bg-cover w-[100%] h-[300px] flex flex-col justify-between items-center py-1 hover:scale-102">
+            <span class="inline-block px-3 py-1 rounded-2xl  bg-white text-blue-500 font-bold">Sweet Desert</span>
+            <button
+              class="px-3 py-1 rounded-2xl bg-white text-blue-500 hover:bg-blue-500 hover:text-white transition-all font-bold">Shop
+              Now</button>
+          </div>
+
+          <div
+            class="col-span-1 rounded-4xl bg-[url(/src/assets/wash.png)] bg-no-repeat bg-origin-content w-[100%] h-[300px] flex flex-col justify-between items-center py-1 hover:scale-102">
+            <span class="inline-block px-3 py-1 rounded-2xl  bg-white text-blue-500 font-bold">Sweet Desert</span>
+            <button
+              class="px-3 py-1 rounded-2xl bg-white text-blue-500 hover:bg-blue-500 hover:text-white transition-all font-bold">Shop
+              Now</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- hero section  end -->
+
+    <!-- feature products -->
+    <section class="contentContain">
+      <div class="mt-15 mb-5">
+        <h5 class="text-green-500 font-bold">OUT CULLECTION</h5>
+        <div class=" flex lg:justify-between flex-col lg:flex-row lg:items-center">
+          <h1 class="text-4xl font-bold mb-3">Featurd Products</h1>
+          <ul class="flex justify-around lg:w-[40%] w-[90%] mx-auto gap-3 font-bold bg-gray-200 rounded-2xl p-2">
+            <li id="allProducts"
+              class="relative cursor-pointer after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:w-[70%] after:bg-green-500  after:transition-all text-green-400 ">
+              All Products</li>
+            <li id="vegetables"
+              class="relative cursor-pointer after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all hover:text-green-500">
+              Vegetables</li>
+            <li id="freshFruits"
+              class="relative cursor-pointer after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all hover:text-green-500">
+              Fresh Fruits</li>
+            <li id="desserts"
+              class="relative cursor-pointer after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all hover:text-green-500">
+              Desserts</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- product showing -->
+      <div id="allProductsShow" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-10 gap-3">
+      </div>
+      <!-- see more product -->
+      <button id="readMoreCards"
+        class="p-2 mx-auto bg-blue-500 text-white mt-2 rounded-xl flex items-center justify-center">read more</button>
+
+    </section>
+
+
+    <section class="bg-blue-100 py-10">
+      <div class="contentContain">
+        <div class="grid md:grid-cols-2 p-2 rounded-xl bg-white py-10 px-5">
+          
+          <!-- deal right side -->
+          <div class="bg-blue-950 p-7">
+            <div class="flex gap-10 ml-7 mt-7">
+              <span class="bg-blue-700 text-white rounded-md px-2 py-1">Winter Spacial</span>
+              <span class="bg-red-500 text-white rounded-md px-2 py-1">Limited Times</span>
+            </div>
+            <h1 class="text-5xl uppercase font-bold mt-5 text-white">Winter</h1>
+            <h1 class="text-5xl uppercase font-bold text-blue-800 mb-4">Mega Sale</h1>
+            <p class="text-xl font-semibold text-gray-200">Get up to <span class="font-bold text-2xl">50% OFF</span> on
+              all winter essentials. Stay warm and cozy with
+              our organic collection.</p>
+            <button
+              class="bg-blue-600 shadow-2xl hover:scale-105 transition-transform p-2 rounded-2xl text-xl font-bold text-white mt-10">Shop
+              The Sale <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+
+          <!-- deal left side -->
+          <div class="p-7">
+            <h1
+              class=" mb-10 relative after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 after:bottom-0 hover:after:w-[70%] font-bold text-2xl after:w-30 after:bg-green-500  after:transition-all text-green-400">
+              Hot Deals For you</h1>
+
+            <div class="mb-5">
+              <div class="flex items-center gap-10 shadow-2xl p-1 rounded-2xl">
+                <div class="w-[90px] bg-pinck-300 text-pink-100">
+                  <img class="w-[100]" src="./src/assets/total2.png" alt="">
+                </div>
+                <div>
+                  <h1 class="text-xl font-bold">Organic HJoney & Nuts</h1>
+                  <h2>&18.00</h2>
+                </div>
+                <span class="size-10 bg-pink-200 flex justify-center items-center text-2xl rounded-full"><i
+                    class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+            <div class="mb-5">
+              <div class="flex items-center gap-10 shadow-2xl p-1 rounded-2xl">
+                <div class="w-[90px] bg-pinck-300 text-pink-100">
+                  <img class="w-[100]" src="./src/assets/total2.png" alt="">
+                </div>
+                <div>
+                  <h1 class="text-xl font-bold">Organic HJoney & Nuts</h1>
+                  <h2>&18.00</h2>
+                </div>
+                <span class="size-10 bg-pink-200 flex justify-center items-center text-2xl rounded-full"><i
+                    class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+            <div class="mb-5">
+              <div class="flex items-center gap-10 shadow-2xl p-1 rounded-2xl">
+                <div class="w-[90px] bg-pinck-300 text-pink-100">
+                  <img class="w-[100]" src="./src/assets/total2.png" alt="">
+                </div>
+                <div>
+                  <h1 class="text-xl font-bold">Organic HJoney & Nuts</h1>
+                  <h2>&18.00</h2>
+                </div>
+                <span class="size-10 bg-pink-200 flex justify-center items-center text-2xl rounded-full"><i
+                    class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+            <div class="mb-5">
+              <div class="flex items-center gap-10 shadow-2xl p-1 rounded-2xl">
+                <div class="w-[90px] bg-pinck-300 text-pink-100">
+                  <img class="w-[100]" src="./src/assets/total2.png" alt="">
+                </div>
+                <div>
+                  <h1 class="text-xl font-bold">Organic HJoney & Nuts</h1>
+                  <h2>&18.00</h2>
+                </div>
+                <span class="size-10 bg-pink-200 flex justify-center items-center text-2xl rounded-full"><i
+                    class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- slider section -->
+    <section class="bg-gray-100">
+        
+             
+
+
+
+
+    </section>
+
+
+
+  </main>
+
+  <!-- ============================ footer ============================== -->
+  <footer>
+
+
+  </footer>
+
+
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

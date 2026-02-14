@@ -1,0 +1,40 @@
+.contentContain{
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.disconAnimation{
+    animation: bounce-x 4s infinite;
+}
+
+@keyframes bounce-x {
+  0%,100% {
+    transform: translateX(-10%);
+    
+  }
+  50% {
+    transform: none;
+    
+  }
+}
+
+/* scrollBar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE / Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.under::after{
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: rgb(60, 222, 60);
+    position: absolute;
+    left: 0px;
+    bottom:0px
+}

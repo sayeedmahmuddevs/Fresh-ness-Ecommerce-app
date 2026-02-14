@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "name": "Fruit",
+    "title": "Mango",
+    "price": 120,
+    "discount": 10,
+    "img": "./src/assets/vagetables/img1.png"
+  },
+  {
+    "id": 2,
+    "name": "Fruit",
+    "title": "Banana",
+    "price": 40,
+    "discount": 5,
+    "img": "./src/assets/vagetables/img2.png"
+  },
+  {
+    "id": 3,
+    "name": "Fruit",
+    "title": "Apple",
+    "price": 100,
+    "discount": 8,
+    "img": "./src/assets/vagetables/img3.png"
+  },
+  {
+    "id": 4,
+    "name": "Fruit",
+    "title": "Orange",
+    "price": 80,
+    "discount": 12,
+    "img": "./src/assets/vagetables/img4.png"
+  },
+  {
+    "id": 5,
+    "name": "Fruit",
+    "title": "Lychee",
+    "price": 150,
+    "discount": 15,
+    "img": "./src/assets/vagetables/img5.png"
+  },
+  {
+    "id": 6,
+    "name": "Fruit",
+    "title": "Jackfruit",
+    "price": 200,
+    "discount": 20,
+    "img": "./src/assets/vagetables/img6.png"
+  },
+  {
+    "id": 7,
+    "name": "Fruit",
+    "title": "Papaya",
+    "price": 90,
+    "discount": 5,
+    "img": "./src/assets/vagetables/img7.png"
+  },
+  {
+    "id": 8,
+    "name": "Fruit",
+    "title": "Guava",
+    "price": 60,
+    "discount": 7,
+    "img": "./src/assets/vagetables/img8.png"
+  },
+  {
+    "id": 9,
+    "name": "Fruit",
+    "title": "Pineapple",
+    "price": 130,
+    "discount": 10,
+    "img": "./src/assets/vagetables/img9.png"
+  },
+  {
+    "id": 10,
+    "name": "Fruit",
+    "title": "Pomegranate",
+    "price": 140,
+    "discount": 12,
+    "img": "./src/assets/vagetables/img10.png"
+  },
+  {
+    "id": 11,
+    "name": "Fruit",
+    "title": "Watermelon",
+    "price": 180,
+    "discount": 15,
+    "img": "./src/assets/vagetables/img11.png"
+  },
+  {
+    "id": 12,
+    "name": "Fruit",
+    "title": "Muskmelon",
+    "price": 160,
+    "discount": 10,
+    "img": "./src/assets/vagetables/img12.png"
+  },
+  {
+    "id": 13,
+    "name": "Fruit",
+    "title": "Pear",
+    "price": 90,
+    "discount": 5,
+    "img": "./src/assets/vagetables/img13.png"
+  },
+  {
+    "id": 14,
+    "name": "Fruit",
+    "title": "Cherry",
+    "price": 200,
+    "discount": 18,
+    "img": "./src/assets/vagetables/img14.png"
+  },
+  {
+    "id": 15,
+    "name": "Fruit",
+    "title": "Strawberry",
+    "price": 220,
+    "discount": 20,
+    "img": "./src/assets/vagetables/img15.png"
+  },
+  {
+    "id": 16,
+    "name": "Vegetable",
+    "title": "Potato",
+    "price": 30,
+    "discount": 0,
+    "img": "./src/assets/vagetables/img16.png"
+  },
+  {
+    "id": 17,
+    "name": "Vegetable",
+    "title": "Onion",
+    "price": 35,
+    "discount": 0,
+    "img": "./src/assets/vagetables/img17.png"
+  },
+  {
+    "id": 18,
+    "name": "Vegetable",
+    "title": "Garlic",
+    "price": 50,
+    "discount": 0,
+    "img": "./src/assets/vagetables/img18.png"
+  },
+  {
+    "id": 19,
+    "name": "Vegetable",
+    "title": "Ginger",
+    "price": 60,
+    "discount": 0,
+    "img": "./src/assets/vagetables/img19.png"
+  },
+  {
+    "id": 20,
+    "name": "Vegetable",
+    "title": "Tomato",
+    "price": 40,
+    "discount": 0,
+    "img": "./src/assets/vagetables/img20.png"
+  },
+  {
+    "id": 21,
+    "name": "Vegetable",
+    "title": "Cauliflower",
+    "price": 70,
+    "discount": 0,
+    "img": "./src/assets/vagetables/img21.png"
+  },
+  {
+    "id": 22,
+    "name": "Vegetable",
+    "title": "Carrot",
+    "price": 50,
+    "discount": 0,
+    "img": "./src/assets/vagetables/img22.png"
+  },
+  {
+    "id": 23,
+    "name": "Vegetable",
+    "title": "Pumpkin",
+    "price": 80,
+    "discount": 5,
+    "img": "./src/assets/vagetables/img23.png"
+  },
+  {
+    "id": 24,
+    "name": "Dessert",
+    "title": "Cake",
+    "price": 250,
+    "discount": 10,
+    "img": "./src/assets/vagetables/img24.png"
+  },
+  {
+    "id": 25,
+    "name": "Dessert",
+    "title": "Pastry",
+    "price": 150,
+    "discount": 8,
+    "img": "./src/assets/vagetables/img25.png"
+  },
+  {
+    "id": 26,
+    "name": "Dessert",
+    "title": "Chocolate",
+    "price": 100,
+    "discount": 5,
+    "img": "./src/assets/vagetables/img26.png"
+  },
+  {
+    "id": 27,
+    "name": "Dessert",
+    "title": "Brownie",
+    "price": 120,
+    "discount": 10,
+    "img": "./src/assets/vagetables/img27.png"
+  },
+  {
+    "id": 28,
+    "name": "Drink",
+    "title": "Mango Juice",
+    "price": 90,
+    "discount": 5,
+    "img": "./src/assets/vagetables/img28.png"
+  },
+  {
+    "id": 29,
+    "name": "Drink",
+    "title": "Orange Juice",
+    "price": 80,
+    "discount": 5,
+    "img": "./src/assets/vagetables/img29.png"
+  },
+  {
+    "id": 30,
+    "name": "Drink",
+    "title": "Pineapple Juice",
+    "price": 100,
+    "discount": 10,
+    "img": "./src/assets/vagetables/img30.png"
+  },
+  {
+    "id": 31,
+    "name": "Meat / Pet",
+    "title": "Salmon",
+    "price": 500,
+    "discount": 15,
+    "img": "./src/assets/vagetables/img31.png"
+  },
+  {
+    "id": 32,
+    "name": "Meat / Pet",
+    "title": "dog",
+    "price": 2000,
+    "discount": 20,
+    "img": "./src/assets/vagetables/img32.png"
+  }
+]
