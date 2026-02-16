@@ -28,9 +28,9 @@
         <h1 class="text-4xl font-bold text-red-400">Fresh<span class="text-green-400">Ness</span></h1>
         <div class="hidden lg:block w-[50%]">
           <div class="flex overflow-hidden border rounded-3xl">
-            <input class="p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+            <input class="searchVal p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
               placeholder="Search for products">
-            <span class="bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
+            <span class="searchLoad bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
                 class="fa-solid fa-magnifying-glass"></i></span>
           </div>
         </div>
@@ -59,9 +59,9 @@
             </div>
             <div>
               <div class="flex overflow-hidden border rounded-xl w-[100%] ">
-                <input class="p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+                <input class="searchVal2 p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
                   placeholder="Search for products">
-                <span class="bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
+                <span class="searchLoad2 bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
                     class="fa-solid fa-magnifying-glass"></i></span>
               </div>
             </div>
@@ -139,7 +139,7 @@
         <h5 class="font-semibold mt-1">Found <span class="text-red-500">25</span> fresh items</h5>
       </div>
       <div class="flex overflow-hidden border rounded-3xl">
-          <input class="p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+          <input class="searchVal3 p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
             placeholder="Search for products">
           <span class="bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
               class="fa-solid fa-magnifying-glass"></i></span>
@@ -150,11 +150,17 @@
 
             <!-- product showing -->
        <div class="grid lg:grid-cols-12 grid-row-12 ">
-          <div class="col-span-6 lg:col-span-3 flex flex-col">
-                <h1 class="text-xl font-semibold mb-1">Categories</h1>
+          
+            <div class="col-span-6 lg:col-span-3 flex flex-col bg-pink-50 sticky rounded-2xl p-3">
+                <div class="mb-5">
+                  <div class="text-3xl font-semibold uppercase mb-4"><i class="text-2xl fa-solid fa-filter"></i> Filter</div>
+                  <div class="text-lg font-semibold uppercase mb-4"><i class="text-md fa-solid fa-tag"></i> Your Budget ($)</div>
+                  <div class="flex gap-1 items-center"><input type="number" placeholder="Min" class="w-30 bg-gray-100 p-2 rounded-xl font-semibold outline-0">-<input type="number" placeholder="Max" class="w-30 bg-gray-100 p-2 rounded-xl font-semibold outline-0"></div>
+                </div>
+                <h1 class="text-xl font-semibold mb-1 uppercase">Categories</h1>
                 <ul class="flex justify-around flex-col w-[40%] gap-8 font-bold rounded-2xl p-2">
                   <li id="allProducts"
-                    class="relative cursor-pointer after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:w-[70%] after:bg-green-500  after:transition-all text-green-400  ">
+                    class="relative cursor-pointer after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:w-[70%] after:bg-green-500  after:transition-all text-green-400 ">
                     All Products</li>
                   <li id="vegetables"
                     class="relative cursor-pointer after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all hover:text-green-500">
@@ -166,18 +172,27 @@
                     class="relative cursor-pointer after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all hover:text-green-500">
                     Desserts</li>
                 </ul>
-          </div>
+                <div class="mt-10">
+                  <h4 class="text-2xl mb-3 uppercase font-semibold">Sort Result</h4>
+                  <div class="flex flex-col gap-6 ml-2">
+                    <div class="p-2 border-green-500 border rounded-md text-lg font-semibold"><input type="radio" name="short"> Newest Arrivals</div>
+                    <div class="p-2 border-green-500 border rounded-md text-lg font-semibold"><input type="radio" name="short"> Price: Low to High</div>
+                    <div class="p-2 border-green-500 border rounded-md text-lg font-semibold"><input type="radio" name="short"> Price: Heigh to Low</div>
+                  </div>
+                </div>
+            </div>
+          
+          
 
           <!-- product render -->
-         <div id="allProductsShow" class="lg:col-span-9 col-span-6 grid grid-cols-2 md:grid-cols-3  md:gap-10 gap-3">
-         </div>
-
-       </div>
-      <!-- see more product -->
-      <button id="readMoreCards"
-        counting = '8'
-        class="p-2 mx-auto bg-blue-500 text-white mt-2 rounded-xl flex items-center justify-center">
-        read more</button>
+          <div id="allProductsShow" class="lg:col-span-9 col-span-6 grid grid-cols-2 md:grid-cols-3  md:gap-10 gap-3">
+          </div>
+         
+        </div>
+        <!-- see more product -->
+        <button id="readMoreCards"
+          class="p-2 mx-auto bg-blue-500 text-white mt-2 rounded-xl flex items-center justify-center">
+          read more</button>
 
     </section>
     
@@ -242,7 +257,7 @@
     </div>
 
     <hr class="opacity-10 mb-5">
-    <div class="flex justify-between items-center pb-6">
+    <div class="flex flex-col gap-3 md:flex-row justify-between items-center pb-6">
       <h4><i class="fa-regular fa-copyright"></i> 2026 <span class="text-green-500 font-bold">FreshNess.</span>All Rights Reserved </h4>
 
       <div class="flex gap-5">
@@ -255,7 +270,8 @@
     </div>
   </footer>
 
-<script type="module" src="./src/js/main.js"></script>
+
+<script type='module' src="./src/js/allgroceries.js"></script>
 </body>
 
 </html>

@@ -28,9 +28,9 @@
         <h1 class="text-4xl font-bold text-red-400">Fresh<span class="text-green-400">Ness</span></h1>
         <div class="hidden lg:block w-[50%]">
           <div class="flex overflow-hidden border rounded-3xl">
-            <input class="p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+            <input class="searchVal p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
               placeholder="Search for products">
-            <span class="bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
+            <span class="searchLoad bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
                 class="fa-solid fa-magnifying-glass"></i></span>
           </div>
         </div>
@@ -59,9 +59,9 @@
             </div>
             <div>
               <div class="flex overflow-hidden border rounded-xl w-[100%] ">
-                <input class="p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+                <input class="searchVal2 p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
                   placeholder="Search for products">
-                <span class="bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
+                <span class="searchLoad bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
                     class="fa-solid fa-magnifying-glass"></i></span>
               </div>
             </div>
@@ -224,7 +224,8 @@
       </div>
       <!-- see more product -->
       <button id="readMoreCards"
-        class="p-2 mx-auto bg-blue-500 text-white mt-2 rounded-xl flex items-center justify-center">read more</button>
+        class="p-2 mx-auto bg-blue-500 text-white mt-2 rounded-xl flex items-center justify-center">
+        read more</button>
 
     </section>
 
@@ -317,7 +318,7 @@
 
     <!-- Service section -->
     <section>
-      <div class="contentContain grid grid-cols-2 gap-6">
+      <div class="contentContain grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="col-span-1 flex justify-center items-center">
           <div class="w-100 rounded-t-full h-140 overflow-hidden">
             <img class="h-full object-cover" src="./src/assets/fresherbg.jpg" alt="">
@@ -332,7 +333,7 @@
             our products.
             Organic food is food produced.</p>
 
-          <div class="mt-5 flex gap-10">
+          <div class="mt-5 flex flex-col md:flex-row gap-3 md:gap-10">
             <ul class="flex flex-col gap-3">
               <li class="flex gap-2 items-center"><span
                   class="size-5 flex justify-center items-center bg-green-500 rounded-full"><i
@@ -356,7 +357,7 @@
         </div>
       </div>
 
-      <div class="contentContain flex gap-10 justify-around">
+      <div class="contentContain flex gap-5 justify-around flex-col md:flex-row md:gap-10">
         <div class="p-5 bg-green-50 mt-10 rounded-2xl hover:translate-y-2 transition-transform cursor-pointer">
           <span class="mb-2 inline-block"><i class="text-2xl fa-solid fa-car"></i></span>
           <h3 class="text-2xl font-bold mb-2">Free Delivery</h3>
@@ -490,8 +491,8 @@
     </div>
   </footer>
 
-<script type="module" src="./src/js/main.js"></script>
-<script src="./src/js/home.js"></script>
+<script type="module" src="./src/js/home.js"></script>
+
 </body>
 
 </html>

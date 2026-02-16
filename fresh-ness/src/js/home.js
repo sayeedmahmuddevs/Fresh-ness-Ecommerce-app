@@ -1,3 +1,52 @@
+import { data } from "../data/productData.js";
+import { ProductsCard } from "./productCard.js";
+import { scrolling } from "./Scrolling.js";
+
+// fruitsNav
+const totalFruits = [
+    {
+        id: '1',
+        categories:'Vegetable',
+        name: 'Vegetables',
+        img: '/src/assets/total1.png'
+
+    },
+    {
+        id: '2',
+        name: 'Fresh Fruits',
+        categories: 'Fruit',
+        img: '/src/assets/total2.png'
+
+    },
+    {
+        id: '3',
+        name: 'Desserts',
+        categories:'Dessert',
+        img: '/src/assets/total3.png'
+
+    },
+    {
+        id: '4',
+        name: 'Drink & Juice',
+        categories:'Drink',
+        img: '/src/assets/total4.png'
+
+    },
+    {
+        id: '5',
+        name: 'Fish & Meats',
+        categories:"Meat / Pet",
+        img: '/src/assets/total5.png'
+
+    },
+    {
+        id: '6',
+        name: 'Pet & Animalsa',
+        img: '/src/assets/total6.png'
+    }
+];
+
+
 // question Item
 const askQuestion = [
     {
@@ -38,11 +87,48 @@ const askQuestion = [
     }
 ];
 
+
+
+export async function allJs(){
+    const datas = await data();
+    console.log(datas);
+
+    // page scrolling 
+    scrolling()
     
-// ============================ Ask question Start ======================================
+    
+    const totalProducts = document.getElementById('totalProducts');
+    // Start Get unique categories and all item names
+    if(totalProducts){
+        totalProducts.innerHTML = "";
+    
+        totalFruits.map((val, index) => {
+            totalProducts.innerHTML += `
+           <div data-totalPro =${index + 1} class="pl-1 hover:scale-102 transition-all cursor-pointer min-w-[180px] flex gap-2 items-center">
+                <span class="inline-block size-10 border rounded-full p-1 bg-pink-200"><img class="w-[100%]" src="${val.img}" alt=""></span>
+            <div>
+            <h4 class="font-bold">${val.name}</h4>
+            <h5 class="text-sm"><span class="categoriesTotal">${totalCategories(val.categories)}</span> Products</h5>
+
+            </div>
+           </div>
+        `}).join()
+
+    }
+
+    // function unique catergories total
+    function totalCategories(val){
+        return datas.filter(item => item.categories === val).length
+    }
+    //  End Get unique categories and all item names
+
+
+    // ====================== productsShowing Start ==========================       
+    ProductsCard(datas)
+    // ====================== productsShowing End ==========================
+    
 
 const questionBox = document.getElementById("qstBox");
-  
     questionBox.innerHTML = "";
     askQuestion.map((item, index)=>{
         questionBox.innerHTML += `
@@ -68,6 +154,8 @@ const questionBox = document.getElementById("qstBox");
                 const qstAns = qstItem.querySelector('.qstAns');
                 const qst = qstItem.querySelector('.qst');
                 const qstCheck = qstItem.querySelector('.qstCheck');
+
+
                         
                 qst.classList.toggle('text-green-500');
                 qstCheck.classList.toggle('rotate-222');
@@ -76,6 +164,7 @@ const questionBox = document.getElementById("qstBox");
 
             })
         })
-    
+}
+allJs()
 
 

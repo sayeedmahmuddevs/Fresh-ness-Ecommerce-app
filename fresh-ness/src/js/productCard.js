@@ -1,118 +1,6 @@
-import { data } from "../data/productData.js";
-
-// fruitsNav
-const totalFruits = [
-    {
-        id: '1',
-        categories:'Vegetable',
-        name: 'Vegetables',
-        img: '/src/assets/total1.png'
-
-    },
-    {
-        id: '2',
-        name: 'Fresh Fruits',
-        categories: 'Fruit',
-        img: '/src/assets/total2.png'
-
-    },
-    {
-        id: '3',
-        name: 'Desserts',
-        categories:'Dessert',
-        img: '/src/assets/total3.png'
-
-    },
-    {
-        id: '4',
-        name: 'Drink & Juice',
-        categories:'Drink',
-        img: '/src/assets/total4.png'
-
-    },
-    {
-        id: '5',
-        name: 'Fish & Meats',
-        categories:"Meat / Pet",
-        img: '/src/assets/total5.png'
-
-    },
-    {
-        id: '6',
-        name: 'Pet & Animalsa',
-        img: '/src/assets/total6.png'
-    }
-];
-
-// question Item
-
-export async function allJs(){
-    const datas = await data();
-    console.log(datas);
-
-    // mobileMenu
-    const mobileMenu = document.getElementById('mobileMenu')
-    mobileMenu.addEventListener('click', ()=>{
-        const mobileNav = document.getElementById('mobileNav')
-        mobileNav.classList.toggle('-translate-x-100')
-        
-
-    })
-
-
-
-    // mavbar scroll hide show
-    let lastScroll = window.scrollY;
-    const header = document.getElementById('header');
-
-    window.addEventListener('scroll', function () {
-        let currentScroll = window.scrollY;
-        const mobileNav = document.getElementById('mobileNav')
-        if (currentScroll > lastScroll && window.scrollY > 150) {
-            mobileNav.classList.add('-translate-y-200')
-            header.classList.add('-translate-y-100');
-
-
-        } else {
-            header.classList.remove('-translate-y-100');
-            mobileNav.classList.remove('-translate-y-200')
-        }
-
-        lastScroll = currentScroll;
-    });
-
-
-    const totalProducts = document.getElementById('totalProducts');
-    
-    // Start Get unique categories and all item names
-    if(totalProducts){
-        totalProducts.innerHTML = "";
-    
-    totalFruits.map((val, index) => {
-        totalProducts.innerHTML += `
-        <div data-totalPro =${index + 1} class="pl-1 hover:scale-102 transition-all cursor-pointer min-w-[180px] flex gap-2 items-center">
-            <span class="inline-block size-10 border rounded-full p-1 bg-pink-200"><img class="w-[100%]" src="${val.img}" alt=""></span>
-        <div>
-        <h4 class="font-bold">${val.name}</h4>
-        <h5 class="text-sm"><span class="categoriesTotal">${totalCategories(val.categories)}</span> Products</h5>
-
-      </div>
-    </div>
-    `}).join()
-
-    }
-    
-
-    // function unique catergories total
-        function totalCategories(val){
-        return datas.filter(item => item.categories === val).length
-    }
-
-    //  End Get unique categories and all item names
-
-    // ====================== productsShowing Start ==========================    
-    // product discount
-    function discountProduct(price, discount){
+export function ProductsCard(datas){
+        // product discount
+        function discountProduct(price, discount){
         const discountPrice = (discount*price)/100
         const discounts = price-discountPrice
         return discounts.toFixed()
@@ -126,15 +14,23 @@ export async function allJs(){
     const dessertBtn = document.getElementById('desserts'); 
     const readMOreBtn = document.getElementById('readMoreCards');
     let visiblCount = 8
-    
-    function showingPro(filter = "all"){
+
+       
+    function showingPro(filter = "all", searchText=""){
         allProductShow.innerHTML = "";
 
         // filtering categories
-        const categories = datas.filter(card => filter === 'all' || card.categories === filter)
+        let categories = datas.filter(card => filter === 'all' || card.categories === filter);
+        
+        if(searchText){
+            categories= categories.filter(card => 
+                card.title.toLowerCase().includes(searchText.toLowerCase())
+            )
+        }
         
         // showing product if filtering
         categories.slice(0,visiblCount).map(card => {
+
             const proDiscount = discountProduct(card.price, card.discount)
         
             allProductShow.innerHTML += `
@@ -165,10 +61,34 @@ export async function allJs(){
         `}).join();
 
         readMOreBtn.style.display = visiblCount>= categories.length? "none":'block';
+        console.log(categories);
 
     }
     
     let productMenuIndex ="all"
+
+    const searchVal = document.querySelector('.searchVal');
+        searchVal.addEventListener('input', ()=> {
+            const val = searchVal.value.trim()
+            showingPro(productMenuIndex, val)
+            
+        })
+
+    const searchVal2 = document.querySelector('.searchVal2');
+    if(searchVal2){
+        searchVal2.addEventListener('input', ()=> {
+            const val = searchVal2.value.trim()
+            showingPro(productMenuIndex, val)
+        })
+    }
+    
+    const searchVal3 = document.querySelector('.searchVal3');
+        if(searchVal3){
+            searchVal3.addEventListener('input', ()=> {
+            const val = searchVal3.value.trim()
+            showingPro(productMenuIndex, val)
+            })
+        }
     
     function setBtn(btn){
         [allProBtn, vegetableBtn, freshFrutsBtn, dessertBtn].forEach(b => 
@@ -213,13 +133,8 @@ export async function allJs(){
         visiblCount+=8          
         showingPro(productMenuIndex)
     })
+    
     // renderProduct
     showingPro()
-// ====================== productsShowing End ==========================
-
-
-
-
 
 }
-
