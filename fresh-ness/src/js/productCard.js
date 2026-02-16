@@ -1,3 +1,6 @@
+let categories=[] ;
+
+
 export function ProductsCard(datas){
         // product discount
         function discountProduct(price, discount){
@@ -14,14 +17,41 @@ export function ProductsCard(datas){
     const dessertBtn = document.getElementById('desserts'); 
     const readMOreBtn = document.getElementById('readMoreCards');
     let visiblCount = 8
+    let setSort = 'arival'
 
+    const prices = document.querySelectorAll('.prices')
+    if(prices){   
+            prices.forEach(input => {
+                input.addEventListener('click',()=>{
+                    prices.forEach(d => {
+                        d.classList.remove('border-green-500', 'border-2');
+                        d.classList.add('border');
+                        d.querySelector('input[type="radio"]').checked = false
+                    })
+
+                    input.classList.add('border-green-500', 'border-2');
+                    input.querySelector('input[type="radio"]').checked = true
+                    setSort = input.getAttribute('value')
+                    showingPro(productMenuIndex, searchVal.value.trim());
+                   
+                })
+            })
+            
+         }
        
     function showingPro(filter = "all", searchText=""){
         allProductShow.innerHTML = "";
 
         // filtering categories
-        let categories = datas.filter(card => filter === 'all' || card.categories === filter);
-        
+         categories = datas.filter(card => filter === 'all' || card.categories === filter);
+         
+        if(setSort === 'low'){
+            categories.sort((a,b) => a.price - b.price);
+        }else if(setSort === 'high'){
+            categories.sort((a,b) => b.price - a.price);
+
+        }
+
         if(searchText){
             categories= categories.filter(card => 
                 card.title.toLowerCase().includes(searchText.toLowerCase())
@@ -62,6 +92,8 @@ export function ProductsCard(datas){
 
         readMOreBtn.style.display = visiblCount>= categories.length? "none":'block';
         console.log(categories);
+
+        
 
     }
     
@@ -136,5 +168,10 @@ export function ProductsCard(datas){
     
     // renderProduct
     showingPro()
+    
 
+}
+
+export function categorieses(){
+    return categories
 }
