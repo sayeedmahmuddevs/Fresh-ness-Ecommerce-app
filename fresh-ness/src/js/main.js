@@ -1,2 +1,2 @@
-import { home } from "./home.js";
-home().then();
+import { allJs } from "./allJS.js";
+allJs();
