@@ -1,6 +1,5 @@
 let categories=[] ;
 
-
 export function ProductsCard(datas){
         // product discount
         function discountProduct(price, discount){
@@ -16,9 +15,12 @@ export function ProductsCard(datas){
     const freshFrutsBtn = document.getElementById('freshFruits');
     const dessertBtn = document.getElementById('desserts'); 
     const readMOreBtn = document.getElementById('readMoreCards');
+    const countCategories = document.querySelector('.countCategories');
     let visiblCount = 8
     let setSort = 'arival'
 
+
+// Shorting products on the All Categories page at descending prices
     const prices = document.querySelectorAll('.prices')
     if(prices){   
             prices.forEach(input => {
@@ -32,33 +34,34 @@ export function ProductsCard(datas){
                     input.classList.add('border-green-500', 'border-2');
                     input.querySelector('input[type="radio"]').checked = true
                     setSort = input.getAttribute('value')
-                    showingPro(productMenuIndex, searchVal.value.trim());
+                    renderProduct(productMenuIndex, searchVal.value.trim());
                    
                 })
             })
             
          }
        
-    function showingPro(filter = "all", searchText=""){
+    function renderProduct(filter = "all", searchText=""){
         allProductShow.innerHTML = "";
 
         // filtering categories
          categories = datas.filter(card => filter === 'all' || card.categories === filter);
-         
+        
+        //  price decending sort btn
         if(setSort === 'low'){
             categories.sort((a,b) => a.price - b.price);
         }else if(setSort === 'high'){
             categories.sort((a,b) => b.price - a.price);
-
         }
 
+        // product Search btn
         if(searchText){
             categories= categories.filter(card => 
                 card.title.toLowerCase().includes(searchText.toLowerCase())
             )
         }
         
-        // showing product if filtering
+        // Render products to the UI
         categories.slice(0,visiblCount).map(card => {
 
             const proDiscount = discountProduct(card.price, card.discount)
@@ -90,6 +93,7 @@ export function ProductsCard(datas){
 
         `}).join();
 
+        // Show or hide the "Read More" button based on whether all products are visible
         readMOreBtn.style.display = visiblCount>= categories.length? "none":'block';
         console.log(categories);
 
@@ -99,10 +103,11 @@ export function ProductsCard(datas){
     
     let productMenuIndex ="all"
 
+    // Search input function
     const searchVal = document.querySelector('.searchVal');
         searchVal.addEventListener('input', ()=> {
             const val = searchVal.value.trim()
-            showingPro(productMenuIndex, val)
+            renderProduct(productMenuIndex, val)
             
         })
 
@@ -110,7 +115,7 @@ export function ProductsCard(datas){
     if(searchVal2){
         searchVal2.addEventListener('input', ()=> {
             const val = searchVal2.value.trim()
-            showingPro(productMenuIndex, val)
+            renderProduct(productMenuIndex, val)
         })
     }
     
@@ -118,10 +123,11 @@ export function ProductsCard(datas){
         if(searchVal3){
             searchVal3.addEventListener('input', ()=> {
             const val = searchVal3.value.trim()
-            showingPro(productMenuIndex, val)
+            renderProduct(productMenuIndex, val)
             })
         }
     
+    // submenu stylish function of categories
     function setBtn(btn){
         [allProBtn, vegetableBtn, freshFrutsBtn, dessertBtn].forEach(b => 
             b.classList.remove('after:w-[70%]', 'text-green-400')
@@ -129,48 +135,61 @@ export function ProductsCard(datas){
         btn.classList.add('after:w-[70%]', 'text-green-400')
     }
 
-    // productMenu Click
+    // productMenu Click function
     allProBtn.addEventListener('click', ()=>{
         visiblCount=8
         productMenuIndex ='all'
         setBtn(allProBtn)
-        showingPro()
+        renderProduct();
+        if(countCategories){
+        countCategories.textContent = categories.length
+    }
         
     })
     vegetableBtn.addEventListener('click', ()=>{
         visiblCount=8
         productMenuIndex ='Vegetable'
-        setBtn(vegetableBtn)
-        showingPro('Vegetable')       
+        setBtn(vegetableBtn);
+        renderProduct('Vegetable');
+        if(countCategories){
+        countCategories.textContent = categories.length
+    }
 
     })
     freshFrutsBtn.addEventListener('click', ()=>{
         visiblCount=8
         productMenuIndex ='Fruit'
-        setBtn(freshFrutsBtn)
-        showingPro('Fruit')        
+        setBtn(freshFrutsBtn);
+        renderProduct('Fruit');
+        if(countCategories){
+        countCategories.textContent = categories.length
+    }
 
     })
     dessertBtn.addEventListener('click', ()=>{
         visiblCount=8
         productMenuIndex ='Dessert'
         setBtn(dessertBtn);
-        showingPro('Dessert');
+        renderProduct('Dessert');
         readMOreBtn.classList.add('hidden')
+        if(countCategories){
+        countCategories.textContent = categories.length
+        }
 
     })
     
-    // readMore
+    // readMorebutton click funtion
     readMOreBtn.addEventListener('click', ()=> {
         visiblCount+=8          
-        showingPro(productMenuIndex)
+        renderProduct(productMenuIndex)
     })
     
-    // renderProduct
-    showingPro()
+    // rendering Product
+    renderProduct()
     
-
 }
+
+
 
 export function categorieses(){
     return categories
