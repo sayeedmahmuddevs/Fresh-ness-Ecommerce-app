@@ -40,13 +40,30 @@ export function ProductsCard(datas){
             })
             
          }
+
+        //  filtering with ui input price
+         const minPrice = document.querySelector('.minPrice');
+         const maxPrice = document.querySelector('.maxPrice')
+         if(minPrice || maxPrice){
+             minPrice.addEventListener('input', ()=> renderProduct())
+             maxPrice.addEventListener('input', ()=> renderProduct())
+
+         }
+         
        
     function renderProduct(filter = "all", searchText=""){
         allProductShow.innerHTML = "";
 
-        // filtering categories
+        // Filters will only be by categories.
          categories = datas.filter(card => filter === 'all' || card.categories === filter);
-        
+
+        //  filtering with input price
+        if(maxPrice || minPrice){
+            const min = parseFloat(minPrice.value)||0
+            const max = parseFloat(maxPrice.value)
+            categories = categories.filter(val => discountProduct(val.price,val.discount)>= min && (isNaN(max) || val.price <=max))
+        }
+         
         //  price decending sort btn
         if(setSort === 'low'){
             categories.sort((a,b) => a.price - b.price);
@@ -100,6 +117,7 @@ export function ProductsCard(datas){
         
 
     }
+    
     
     let productMenuIndex ="all"
 
@@ -188,8 +206,6 @@ export function ProductsCard(datas){
     renderProduct()
     
 }
-
-
 
 export function categorieses(){
     return categories
