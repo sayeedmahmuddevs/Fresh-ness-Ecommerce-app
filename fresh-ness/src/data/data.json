@@ -5,7 +5,10 @@
     "title": "Mango",
     "price": 120,
     "discount": 10,
-    "img": "./src/assets/vagetables/img1.png"
+    "details": "Sweet and juicy tropical fruit rich in vitamins and antioxidants.",
+    "img": "./src/assets/vagetables/img1.png",
+    "img2": "./src/assets/vagetables/img1-2.png",
+    "img3": "./src/assets/vagetables/img1-3.png"
   },
   {
     "id": 2,
@@ -13,7 +16,10 @@
     "title": "Banana",
     "price": 40,
     "discount": 5,
-    "img": "./src/assets/vagetables/img2.png"
+    "details": "Energy-boosting fruit packed with potassium and natural sweetness.",
+    "img": "./src/assets/vagetables/img2.png",
+    "img2": "./src/assets/vagetables/img2-2.png",
+    "img3": "./src/assets/vagetables/img2-3.png"
   },
   {
     "id": 3,
@@ -21,7 +27,10 @@
     "title": "Apple",
     "price": 100,
     "discount": 8,
-    "img": "./src/assets/vagetables/img3.png"
+    "details": "Crisp and nutritious fruit high in fiber and vitamin C.",
+    "img": "./src/assets/vagetables/img3.png",
+    "img2": "./src/assets/vagetables/img3-2.png",
+    "img3": "./src/assets/vagetables/img3-3.png"
   },
   {
     "id": 4,
@@ -29,7 +38,10 @@
     "title": "Orange",
     "price": 80,
     "discount": 12,
-    "img": "./src/assets/vagetables/img4.png"
+    "details": "Citrus fruit loaded with vitamin C and refreshing flavor.",
+    "img": "./src/assets/vagetables/img4.png",
+    "img2": "./src/assets/vagetables/img4-2.png",
+    "img3": "./src/assets/vagetables/img4-3.png"
   },
   {
     "id": 5,
@@ -37,7 +49,10 @@
     "title": "Lychee",
     "price": 150,
     "discount": 15,
-    "img": "./src/assets/vagetables/img5.png"
+    "details": "Fragrant and sweet seasonal fruit with a juicy texture.",
+    "img": "./src/assets/vagetables/img5.png",
+    "img2": "./src/assets/vagetables/img5-2.png",
+    "img3": "./src/assets/vagetables/img5-3.png"
   },
   {
     "id": 6,
@@ -45,7 +60,10 @@
     "title": "Jackfruit",
     "price": 200,
     "discount": 20,
-    "img": "./src/assets/vagetables/img6.png"
+    "details": "Large tropical fruit known for its sweet taste and rich nutrients.",
+    "img": "./src/assets/vagetables/img6.png",
+    "img2": "./src/assets/vagetables/img6-2.png",
+    "img3": "./src/assets/vagetables/img6-3.png"
   },
   {
     "id": 7,
@@ -53,7 +71,10 @@
     "title": "Papaya",
     "price": 90,
     "discount": 5,
-    "img": "./src/assets/vagetables/img7.png"
+    "details": "Soft and digestive-friendly fruit rich in enzymes and vitamins.",
+    "img": "./src/assets/vagetables/img7.png",
+    "img2": "./src/assets/vagetables/img7-2.png",
+    "img3": "./src/assets/vagetables/img7-3.png"
   },
   {
     "id": 8,
@@ -61,7 +82,10 @@
     "title": "Guava",
     "price": 60,
     "discount": 7,
-    "img": "./src/assets/vagetables/img8.png"
+    "details": "Fiber-rich tropical fruit packed with vitamin C.",
+    "img": "./src/assets/vagetables/img8.png",
+    "img2": "./src/assets/vagetables/img8-2.png",
+    "img3": "./src/assets/vagetables/img8-3.png"
   },
   {
     "id": 9,
@@ -69,7 +93,10 @@
     "title": "Pineapple",
     "price": 130,
     "discount": 10,
-    "img": "./src/assets/vagetables/img9.png"
+    "details": "Tangy and juicy fruit that aids digestion and refreshes the body.",
+    "img": "./src/assets/vagetables/img9.png",
+    "img2": "./src/assets/vagetables/img9-2.png",
+    "img3": "./src/assets/vagetables/img9-3.png"
   },
   {
     "id": 10,
@@ -77,7 +104,10 @@
     "title": "Pomegranate",
     "price": 140,
     "discount": 12,
-    "img": "./src/assets/vagetables/img10.png"
+    "details": "Antioxidant-rich fruit filled with ruby-red juicy seeds.",
+    "img": "./src/assets/vagetables/img10.png",
+    "img2": "./src/assets/vagetables/img10-2.png",
+    "img3": "./src/assets/vagetables/img10-3.png"
   },
   {
     "id": 11,
@@ -85,7 +115,10 @@
     "title": "Watermelon",
     "price": 180,
     "discount": 15,
-    "img": "./src/assets/vagetables/img11.png"
+    "details": "Hydrating summer fruit with high water content.",
+    "img": "./src/assets/vagetables/img11.png",
+    "img2": "./src/assets/vagetables/img11-2.png",
+    "img3": "./src/assets/vagetables/img11-3.png"
   },
   {
     "id": 12,
@@ -93,7 +126,10 @@
     "title": "Muskmelon",
     "price": 160,
     "discount": 10,
-    "img": "./src/assets/vagetables/img12.png"
+    "details": "Sweet and aromatic melon that keeps you refreshed.",
+    "img": "./src/assets/vagetables/img12.png",
+    "img2": "./src/assets/vagetables/img12-2.png",
+    "img3": "./src/assets/vagetables/img12-3.png"
   },
   {
     "id": 13,
@@ -101,7 +137,10 @@
     "title": "Pear",
     "price": 90,
     "discount": 5,
-    "img": "./src/assets/vagetables/img13.png"
+    "details": "Soft and juicy fruit rich in fiber and natural sugars.",
+    "img": "./src/assets/vagetables/img13.png",
+    "img2": "./src/assets/vagetables/img13-2.png",
+    "img3": "./src/assets/vagetables/img13-3.png"
   },
   {
     "id": 14,
@@ -109,7 +148,10 @@
     "title": "Cherry",
     "price": 200,
     "discount": 18,
-    "img": "./src/assets/vagetables/img14.png"
+    "details": "Small, vibrant red fruit with a sweet and tart taste.",
+    "img": "./src/assets/vagetables/img14.png",
+    "img2": "./src/assets/vagetables/img14-2.png",
+    "img3": "./src/assets/vagetables/img14-3.png"
   },
   {
     "id": 15,
@@ -117,7 +159,10 @@
     "title": "Strawberry",
     "price": 220,
     "discount": 20,
-    "img": "./src/assets/vagetables/img15.png"
+    "details": "Bright red berry with a sweet flavor and rich in antioxidants.",
+    "img": "./src/assets/vagetables/img15.png",
+    "img2": "./src/assets/vagetables/img15-2.png",
+    "img3": "./src/assets/vagetables/img15-3.png"
   },
   {
     "id": 16,
@@ -125,7 +170,10 @@
     "title": "Potato",
     "price": 30,
     "discount": 0,
-    "img": "./src/assets/vagetables/img16.png"
+    "details": "Staple vegetable widely used in various delicious dishes.",
+    "img": "./src/assets/vagetables/img16.png",
+    "img2": "./src/assets/vagetables/img16-2.png",
+    "img3": "./src/assets/vagetables/img16-3.png"
   },
   {
     "id": 17,
@@ -133,7 +181,10 @@
     "title": "Onion",
     "price": 35,
     "discount": 0,
-    "img": "./src/assets/vagetables/img17.png"
+    "details": "Essential cooking ingredient that enhances flavor and aroma.",
+    "img": "./src/assets/vagetables/img17.png",
+    "img2": "./src/assets/vagetables/img17-2.png",
+    "img3": "./src/assets/vagetables/img17-3.png"
   },
   {
     "id": 18,
@@ -141,7 +192,10 @@
     "title": "Garlic",
     "price": 50,
     "discount": 0,
-    "img": "./src/assets/vagetables/img18.png"
+    "details": "Strong-flavored bulb known for its medicinal properties.",
+    "img": "./src/assets/vagetables/img18.png",
+    "img2": "./src/assets/vagetables/img18-2.png",
+    "img3": "./src/assets/vagetables/img18-3.png"
   },
   {
     "id": 19,
@@ -149,7 +203,10 @@
     "title": "Ginger",
     "price": 60,
     "discount": 0,
-    "img": "./src/assets/vagetables/img19.png"
+    "details": "Spicy root used for flavor and digestive benefits.",
+    "img": "./src/assets/vagetables/img19.png",
+    "img2": "./src/assets/vagetables/img19-2.png",
+    "img3": "./src/assets/vagetables/img19-3.png"
   },
   {
     "id": 20,
@@ -157,7 +214,10 @@
     "title": "Tomato",
     "price": 40,
     "discount": 0,
-    "img": "./src/assets/vagetables/img20.png"
+    "details": "Juicy vegetable commonly used in salads and cooking.",
+    "img": "./src/assets/vagetables/img20.png",
+    "img2": "./src/assets/vagetables/img20-2.png",
+    "img3": "./src/assets/vagetables/img20-3.png"
   },
   {
     "id": 21,
@@ -165,7 +225,10 @@
     "title": "Cauliflower",
     "price": 70,
     "discount": 0,
-    "img": "./src/assets/vagetables/img21.png"
+    "details": "Nutritious vegetable perfect for curries and healthy meals.",
+    "img": "./src/assets/vagetables/img21.png",
+    "img2": "./src/assets/vagetables/img21-2.png",
+    "img3": "./src/assets/vagetables/img21-3.png"
   },
   {
     "id": 22,
@@ -173,7 +236,10 @@
     "title": "Carrot",
     "price": 50,
     "discount": 0,
-    "img": "./src/assets/vagetables/img22.png"
+    "details": "Vitamin A rich vegetable beneficial for eye health.",
+    "img": "./src/assets/vagetables/img22.png",
+    "img2": "./src/assets/vagetables/img22-2.png",
+    "img3": "./src/assets/vagetables/img22-3.png"
   },
   {
     "id": 23,
@@ -181,7 +247,10 @@
     "title": "Pumpkin",
     "price": 80,
     "discount": 5,
-    "img": "./src/assets/vagetables/img23.png"
+    "details": "Sweet and nutritious vegetable used in savory dishes.",
+    "img": "./src/assets/vagetables/img23.png",
+    "img2": "./src/assets/vagetables/img23-2.png",
+    "img3": "./src/assets/vagetables/img23-3.png"
   },
   {
     "id": 24,
@@ -189,7 +258,10 @@
     "title": "Cake",
     "price": 250,
     "discount": 10,
-    "img": "./src/assets/vagetables/img24.png"
+    "details": "Soft and fluffy dessert perfect for celebrations.",
+    "img": "./src/assets/vagetables/img24.png",
+    "img2": "./src/assets/vagetables/img24-2.png",
+    "img3": "./src/assets/vagetables/img24-3.png"
   },
   {
     "id": 25,
@@ -197,7 +269,10 @@
     "title": "Pastry",
     "price": 150,
     "discount": 8,
-    "img": "./src/assets/vagetables/img25.png"
+    "details": "Cream-filled sweet treat loved by dessert lovers.",
+    "img": "./src/assets/vagetables/img25.png",
+    "img2": "./src/assets/vagetables/img25-2.png",
+    "img3": "./src/assets/vagetables/img25-3.png"
   },
   {
     "id": 26,
@@ -205,7 +280,10 @@
     "title": "Chocolate",
     "price": 100,
     "discount": 5,
-    "img": "./src/assets/vagetables/img26.png"
+    "details": "Delicious cocoa-based sweet enjoyed worldwide.",
+    "img": "./src/assets/vagetables/img26.png",
+    "img2": "./src/assets/vagetables/img26-2.png",
+    "img3": "./src/assets/vagetables/img26-3.png"
   },
   {
     "id": 27,
@@ -213,7 +291,10 @@
     "title": "Brownie",
     "price": 120,
     "discount": 10,
-    "img": "./src/assets/vagetables/img27.png"
+    "details": "Rich chocolate dessert with a soft and fudgy texture.",
+    "img": "./src/assets/vagetables/img27.png",
+    "img2": "./src/assets/vagetables/img27-2.png",
+    "img3": "./src/assets/vagetables/img27-3.png"
   },
   {
     "id": 28,
@@ -221,7 +302,10 @@
     "title": "Mango Juice",
     "price": 90,
     "discount": 5,
-    "img": "./src/assets/vagetables/img28.png"
+    "details": "Refreshing tropical drink made from fresh mango pulp.",
+    "img": "./src/assets/vagetables/img28.png",
+    "img2": "./src/assets/vagetables/img28-2.png",
+    "img3": "./src/assets/vagetables/img28-3.png"
   },
   {
     "id": 29,
@@ -229,7 +313,10 @@
     "title": "Orange Juice",
     "price": 80,
     "discount": 5,
-    "img": "./src/assets/vagetables/img29.png"
+    "details": "Healthy citrus beverage packed with vitamin C.",
+    "img": "./src/assets/vagetables/img29.png",
+    "img2": "./src/assets/vagetables/img29-2.png",
+    "img3": "./src/assets/vagetables/img29-3.png"
   },
   {
     "id": 30,
@@ -237,7 +324,10 @@
     "title": "Pineapple Juice",
     "price": 100,
     "discount": 10,
-    "img": "./src/assets/vagetables/img30.png"
+    "details": "Sweet and tangy tropical drink full of freshness.",
+    "img": "./src/assets/vagetables/img30.png",
+    "img2": "./src/assets/vagetables/img30-2.png",
+    "img3": "./src/assets/vagetables/img30-3.png"
   },
   {
     "id": 31,
@@ -245,7 +335,10 @@
     "title": "Salmon",
     "price": 500,
     "discount": 15,
-    "img": "./src/assets/vagetables/img31.png"
+    "details": "Protein-rich fish high in omega-3 fatty acids.",
+    "img": "./src/assets/vagetables/img31.png",
+    "img2": "./src/assets/vagetables/img31-2.png",
+    "img3": "./src/assets/vagetables/img31-3.png"
   },
   {
     "id": 32,
@@ -253,6 +346,9 @@
     "title": "dog",
     "price": 2000,
     "discount": 20,
-    "img": "./src/assets/vagetables/img32.png"
+    "details": "Loyal and friendly domestic animal kept as a pet.",
+    "img": "./src/assets/vagetables/img32.png",
+    "img2": "./src/assets/vagetables/img32-2.png",
+    "img3": "./src/assets/vagetables/img32-3.png"
   }
 ]

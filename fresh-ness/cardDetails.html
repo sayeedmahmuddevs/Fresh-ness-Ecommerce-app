@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/style/index.css">
+  <link rel="stylesheet" href="./src/style/custom.css">
+  <script src="https://kit.fontawesome.com/1f7fbc12ba.js" crossorigin="anonymous"></script>
+  <title>fresh-ness</title>
+</head>
+
+<body class="pt-35">
+
+  <header id="header" class="fixed z-50 w-[100%] top-0 transition-transform duration-800">
+    <section class="contentContain z-50 bg-white border-b-2 border-green-400/10 p-1">
+      <section class="flex justify-between items-center">
+
+        <!-- mobile menu -->
+        <div id="mobileMenu" class="lg:hidden flex flex-col gap-1">
+          <span class="inline-block w-8 h-[3px] bg-black"></span>
+          <span class="inline-block w-8 h-[3px] bg-black"></span>
+          <span class="inline-block w-8 h-[3px] bg-black"></span>
+          <!-- iconBar and SearchBar -->
+        </div>
+
+        <h1 class="text-4xl font-bold text-red-400">Fresh<span class="text-green-400">Ness</span></h1>
+        <div class="hidden lg:block w-[50%]">
+          <div class="flex overflow-hidden border rounded-3xl">
+            <input class="searchVal p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+              placeholder="Search for products">
+            <span class="searchLoad bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
+                class="fa-solid fa-magnifying-glass"></i></span>
+          </div>
+        </div>
+
+        <!-- shopBar -->
+        <div class="flex gap-4">
+          <span class="p-3 text-2xl relative"><i class="fa-regular fa-user"></i> </span>
+          <span class="p-3 text-2xl relative"><i class="relative fa-regular fa-heart"><span
+                class="flex justify-center items-center size-4 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-red-500 text-[13px] ">0</span></i></span>
+          <span class="p-3 text-2xl relative"><i class="relative fa-solid fa-cart-shopping"><span
+                class="flex justify-center items-center size-4 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-green-500 text-[13px] ">0</span></i></span>
+        </div>
+      </section>
+
+      <hr class="my-2 opacity-0 lg:opacity-20">
+
+      <!-- navBAr -->
+      <nav>
+        <section id="mobileNav"
+          class="absolute bg-white lg:w-[88%] w-[300px] h-[85vh] lg:h-10 mt-2 flex flex-col lg:flex-row justify-between lg:items-center -translate-x-100 lg:translate-x-0 transition all">
+          <!-- searchMenu -->
+          <div class="lg:hidden">
+            <div class="bg-blue-500 px-2 text-white mb-2 flex justify-between items-center">
+              <h1 class="text-2xl font-bold py-5">FreshNess</h1>
+              <span class="inline-block text-3xl"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div>
+              <div class="flex overflow-hidden border rounded-xl w-[100%] ">
+                <input class="searchVal2 p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+                  placeholder="Search for products">
+                <span class="searchLoad2 bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
+                    class="fa-solid fa-magnifying-glass"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- nav List -->
+          <ul
+            class="flex flex-col gap-9 lg:gap-0 pl-2 lg:flex-row  justify-items-start lg:justify-between text-lg font-semibold lg:w-[50%]">
+
+            <li class="hover:text-green-500 relative cursor-pointer">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="index.html">Home</a>
+            </li>
+            <li class="hover:text-green-500 cursor-pointer relative">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all after:w-[70px] text-green-500"
+                href="allGroceries.html">All Groceries</a>
+            </li>
+            <li id="" class="lg:relative group cursor-pointer">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="">
+                <div class="hover:text-green-500">Category<i class="fa-solid fa-caret-down"></i></div>
+
+                <!-- submenu -->
+                <ul
+                  class="hidden lg:block group translate-y-4 invisible opacity-0 lg:absolute w-[200px] bg-gray-100 px-2 rounded lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0 duration-50">
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">All Grocerice</a></li>
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">Vegetables</a></li>
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">Fruits</a></li>
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">Dairy</a></li>
+                  <li class="hover:text-white mb-2 hover:bg-gray-300 cursor-pointer"><a href="">Beverages</a></li>
+                </ul>
+              </a>
+
+            </li>
+
+            <li class="hover:text-green-500 cursor-pointer relative">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="">About</a>
+            </li>
+            <li class="hover:text-green-500 cursor-pointer relative">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="">Service</a>
+            </li>
+            <li class="hover:text-green-500 cursor-pointer relative">
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
+                href="">Contact</a>
+            </li>
+          </ul>
+
+          <!-- contact -->
+          <div class="lg:w-[35%] flex flex-col lg:flex-row justify-between items-center">
+            <h3 class="duration-75 font-semibold disconAnimation"><span class="text-green-500">% </span>Weekly Discount
+            </h3>
+            <div class="bg-blue-500 flex gap-2 text-white p-0.5 rounded w-[100%] lg:w-[50%]">
+              <span><i class="fa-solid fa-phone"></i></span>
+              <div class="flex flex-col gap-[-10px] text-sm">
+                <span>Hotline</span>
+                <span class="px-0">+0880 1938473645</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </nav>
+    </section>
+  </header>
+  <!-- header Ended -->
+
+
+  <!-- ===================== main Start ================================ -->
+  <main>
+    <section class="contentContain">
+
+        <div data-cardIndex = ${card.id} class="relative col-span-1 hover:shadow-gray-200 gap-2 border rounded-2xl shadow-2xl p-2 grid grid-cols-1 md:grid-cols-2">
+            <div class="col-span-1">
+                <span class="absolute z-4 p-1 rounded-lg bg-amber-500 text-white font-bold">${card.discount}%</span>
+                <div class="w-[100%] h-[68vh] text-center overflow-hidden rounded-3xl"><img class="mainPicUp w-[100%] h-[100%] bg-pink-100 object-contain hover:scale-105 transition-all" src="./src/assets/total2.png" alt=""></div>
+                <div class="flex gap-5 mt-2">
+                    <div class="h-50 overflow-hidden bg-red-100 rounded-4xl border">
+                        <img class="picUp" src="./src/assets/total2.png" alt="">
+                    </div>
+                    <div class="h-50 overflow-hidden rounded-4xl">
+                        <img class="picUp" src="./src/assets/total1.png" alt="">
+                    </div>
+                    <div class="h-50 overflow-hidden rounded-4xl">
+                        <img class="picUp" src="./src/assets/total3.png" alt="">
+                    </div>
+                </div>
+            </div>     
+                <div class="col-span-1">
+                    <span class="text-sm font-semibold text-gray-400">natural best vegetable</span>
+                    <h2  class="text-xl font-bold mb-1">Fresh organic Carrots</h2>
+                    <div class="flex gap-1 mb-2">
+                    <span><i class="text-yellow-300 fa-solid fa-star"></i></span>
+                    <span><i class="text-yellow-300 fa-solid fa-star"></i></span>
+                    <span><i class="text-yellow-300 fa-solid fa-star"></i></span>
+                    <span><i class="text-yellow-300 fa-solid fa-star"></i></span>
+                    <span><i class="fa-regular fa-star"></i></span>
+                    <span>(2.4)</span>
+                    </div>
+                    <div class="font-bold">$${proDiscount} <del class="text-[13px]">$${card.price}</del></div>
+                    <span>Sweet and crunchy carrots for snacks or juice.</span>
+                    <ul class="list-disc ml-5 w-100 grid grid-cols-2">
+                        <li class="col-span-1">Soil Grown</li>
+                        <li class="col-span-1">High Fiber</li>
+                        <li class="col-span-1">Eye Health</li>
+                    </ul>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span>-</span>
+                            <span>1</span>
+                            <span>+</span>
+                        </div>
+                        <div class="flex justify-end text-2xl px-4 hover:scale-105 transition-transform"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</div>
+                        <div class="flex gap-5 text-3xl">
+                            <span><i class="fa-solid fa-heart"></i> </span>
+                            <span><i class="fa-solid fa-rotate"></i> </span>
+                        </div>
+                    </div>
+                    
+                </div>
+        </div>
+
+    </section>
+    
+
+
+
+
+
+          <!-- product render -->
+          <!-- <div id="allProductsShow" class="lg:col-span-9 col-span-6 grid grid-cols-2 md:grid-cols-3  md:gap-10 gap-3">
+          </div> -->
+              
+
+    </section>
+    
+  </main>
+
+  <!-- ============================ footer ============================== -->
+  <footer class="contentContain">
+    <div class="grid grid-cols-12 mt-10 mb-6 gap-5 sm:gap-1">
+
+      <div class="lg:col-span-3 sm:col-span-6 col-span-12">
+        <h1 class="text-4xl font-bold text-purple-400 mb-3">FreshNess</h1>
+        <p>We provide the best organic and farm-fresh food products directly to your doorstep. Healthy living starts with healthy eating.</p>
+        <div class="flex gap-4 items-center mt-4">
+          <span class="size-10 bg-green-100 flex justify-center items-center rounded-full"><i class="fa-solid fa-phone"></i></span>
+          <span class="font-bold text-gray-600">+8801609440278</span>
+        </div>
+        <div class="flex gap-4 items-center mt-4">
+          <span class="size-10 bg-green-100 flex justify-center items-center rounded-full"><i class="fa-solid fa-envelope"></i></span>
+          <span class="font-bold text-gray-600">sayeedmahmud343@gmail.com</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 sm:col-span-6 col-span-12">
+        <h1 class="text-2xl font-bold">Queck Links</h1>
+        
+        <ul class="list-disc ml-5 leading-10">
+          <li class="hover:text-green-400">Home</li>
+          <li class="hover:text-green-400">Shop Grid</li>
+          <li class="hover:text-green-400">about Us</li>
+          <li class="hover:text-green-400">Contect Us</li>
+          <li class="hover:text-green-400">Our Blog</li>
+          <li class="hover:text-green-400">FAQ</li>
+
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3 sm:col-span-6 col-span-12">
+        <h1 class="text-2xl font-bold">Categories</h1>
+        
+        <ul class="list-disc ml-5 leading-10">
+          <li class="hover:text-green-400">Vegetables</li>
+          <li class="hover:text-green-400">Fresh fruits</li>
+          <li class="hover:text-green-400">Dairy & Eggs</li>
+          <li class="hover:text-green-400">Beverages</li>
+          <li class="hover:text-green-400">Meats & Seafood</li>
+          <li class="hover:text-green-400">Organic Honey</li>
+
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3 sm:col-span-6 col-span-12">
+        <h1 class="text-2xl font-bold">Categories</h1>
+        <p>Subscribe to get latest updates, offers and coupons.</p>
+        <div class="border rounded-2xl mt-4 p-0.5 flex justify-between items-center"><input type="email" placeholder="type the email" class="rounded-2xl text-xl pl-3 py-2"> <button class="bg-green-400 px-3 py-2 rounded-full text-white font-bold">Subscribe</button></div>
+        <div class="mt-15 flex gap-5">
+          <span class="size-10 rounded-full flex justify-center items-center bg-gray-100"><a href=""><i class="fa-brands fa-facebook"></i></a></span>
+          <span class="size-10 rounded-full flex justify-center items-center bg-gray-100"><a href=""><i class="fa-brands fa-linkedin"></i></a></span>
+          <span class="size-10 rounded-full flex justify-center items-center bg-gray-100"><a href=""><i class="fa-brands fa-github"></i></a></span>
+        </div>
+      </div>
+      
+    </div>
+
+    <hr class="opacity-10 mb-5">
+    <div class="flex flex-col gap-3 md:flex-row justify-between items-center pb-6">
+      <h4><i class="fa-regular fa-copyright"></i> 2026 <span class="text-green-500 font-bold">FreshNess.</span>All Rights Reserved </h4>
+
+      <div class="flex gap-5">
+        <button class="bg-gray-100 px-2 py-1 uppercase rounded-4xl font-bold text-gray-500">Visa</button>
+        <button class="bg-gray-100 px-2 py-1 uppercase rounded-4xl font-bold text-gray-500">mastercard</button>
+        <button class="bg-gray-100 px-2 py-1 uppercase rounded-4xl font-bold text-gray-500">Paypal</button>
+        <button class="bg-gray-100 px-2 py-1 uppercase rounded-4xl font-bold text-gray-500">Stripe</button>
+      </div>
+
+    </div>
+  </footer>
+
+
+<script type='module' src="./src/js/allgroceries.js"></script>
+<script type="module" src="./src/js/cardDetails.js"></script>
+<script type="module" src="./src/js/renderProducts.js"></script>
+</body>
+
+</html>

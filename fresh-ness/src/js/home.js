@@ -1,6 +1,8 @@
 import { data } from "../data/productData.js";
-import { ProductsCard } from "./productCard.js";
+// import { ProductsCard } from "./productCard.js";
 import { scrolling } from "./Scrolling.js";
+import { CardsAll } from "./renderProducts.js";
+import { allClick } from "./renderProducts.js";
 
 // fruitsNav
 const totalFruits = [
@@ -124,7 +126,8 @@ export async function allJs(){
 
 
     // ====================== productsShowing Start ==========================       
-    ProductsCard(datas)
+    CardsAll()
+    allClick()
     // ====================== productsShowing End ==========================
     
 
