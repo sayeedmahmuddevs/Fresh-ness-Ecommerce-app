@@ -40,8 +40,8 @@
           <span class="p-3 text-2xl relative"><i class="fa-regular fa-user"></i> </span>
           <span class="p-3 text-2xl relative"><i class="relative fa-regular fa-heart"><span
                 class="flex justify-center items-center size-4 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-red-500 text-[13px] ">0</span></i></span>
-          <span class="p-3 text-2xl relative"><i class="relative fa-solid fa-cart-shopping"><span
-                class="flex justify-center items-center size-4 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-green-500 text-[13px] ">0</span></i></span>
+          <span class="p-3 text-2xl relative"><i class="relative fa-solid fa-cart-shopping"><span id="cartCount"
+                class="flex justify-center items-center p-1 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-green-500 text-[13px] ">0</span></i></span>
         </div>
       </section>
 
@@ -76,7 +76,7 @@
                 href="index.html">Home</a>
             </li>
             <li class="hover:text-green-500 cursor-pointer relative">
-              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all after:w-[70px] text-green-500"
+              <a class="after:absolute after:content-[''] after:w-0 after:h-0.5 after:left-0 after:bottom-0 hover:after:w-[70%] after:bg-green-500 after:transition-all"
                 href="allGroceries.html">All Groceries</a>
             </li>
             <li id="" class="lg:relative group cursor-pointer">
@@ -130,74 +130,17 @@
   <!-- header Ended -->
 
 
-  <!-- ===================== main Start ================================ -->
-  <main>
-    <section class="contentContain">
+  <!-- ===================== main content Start ================================ -->
+  <main class="contentContain">
+    <!-- one card Show -->
+    <section id="cardDetails"> </section>
 
-        <div data-cardIndex = ${card.id} class="relative col-span-1 hover:shadow-gray-200 gap-2 border rounded-2xl shadow-2xl p-2 grid grid-cols-1 md:grid-cols-2">
-            <div class="col-span-1">
-                <span class="absolute z-4 p-1 rounded-lg bg-amber-500 text-white font-bold">${card.discount}%</span>
-                <div class="w-[100%] h-[68vh] text-center overflow-hidden rounded-3xl"><img class="mainPicUp w-[100%] h-[100%] bg-pink-100 object-contain hover:scale-105 transition-all" src="./src/assets/total2.png" alt=""></div>
-                <div class="flex gap-5 mt-2">
-                    <div class="h-50 overflow-hidden bg-red-100 rounded-4xl border">
-                        <img class="picUp" src="./src/assets/total2.png" alt="">
-                    </div>
-                    <div class="h-50 overflow-hidden rounded-4xl">
-                        <img class="picUp" src="./src/assets/total1.png" alt="">
-                    </div>
-                    <div class="h-50 overflow-hidden rounded-4xl">
-                        <img class="picUp" src="./src/assets/total3.png" alt="">
-                    </div>
-                </div>
-            </div>     
-                <div class="col-span-1">
-                    <span class="text-sm font-semibold text-gray-400">natural best vegetable</span>
-                    <h2  class="text-xl font-bold mb-1">Fresh organic Carrots</h2>
-                    <div class="flex gap-1 mb-2">
-                    <span><i class="text-yellow-300 fa-solid fa-star"></i></span>
-                    <span><i class="text-yellow-300 fa-solid fa-star"></i></span>
-                    <span><i class="text-yellow-300 fa-solid fa-star"></i></span>
-                    <span><i class="text-yellow-300 fa-solid fa-star"></i></span>
-                    <span><i class="fa-regular fa-star"></i></span>
-                    <span>(2.4)</span>
-                    </div>
-                    <div class="font-bold">$${proDiscount} <del class="text-[13px]">$${card.price}</del></div>
-                    <span>Sweet and crunchy carrots for snacks or juice.</span>
-                    <ul class="list-disc ml-5 w-100 grid grid-cols-2">
-                        <li class="col-span-1">Soil Grown</li>
-                        <li class="col-span-1">High Fiber</li>
-                        <li class="col-span-1">Eye Health</li>
-                    </ul>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <span>-</span>
-                            <span>1</span>
-                            <span>+</span>
-                        </div>
-                        <div class="flex justify-end text-2xl px-4 hover:scale-105 transition-transform"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</div>
-                        <div class="flex gap-5 text-3xl">
-                            <span><i class="fa-solid fa-heart"></i> </span>
-                            <span><i class="fa-solid fa-rotate"></i> </span>
-                        </div>
-                    </div>
-                    
-                </div>
+    <!-- relative card show -->
+    <section>
+        <h1 class="text-3xl my-10 font-bold ">Related <span class="text-green-500">Products</span></h1>
+        <div id="relatedProducts" class="contentContain grid grid-cols-2 lg:grid-cols-4 sm:grid-cols-3  md:gap-10 gap-3">
         </div>
-
     </section>
-    
-
-
-
-
-
-          <!-- product render -->
-          <!-- <div id="allProductsShow" class="lg:col-span-9 col-span-6 grid grid-cols-2 md:grid-cols-3  md:gap-10 gap-3">
-          </div> -->
-              
-
-    </section>
-    
   </main>
 
   <!-- ============================ footer ============================== -->
@@ -206,20 +149,23 @@
 
       <div class="lg:col-span-3 sm:col-span-6 col-span-12">
         <h1 class="text-4xl font-bold text-purple-400 mb-3">FreshNess</h1>
-        <p>We provide the best organic and farm-fresh food products directly to your doorstep. Healthy living starts with healthy eating.</p>
+        <p>We provide the best organic and farm-fresh food products directly to your doorstep. Healthy living starts
+          with healthy eating.</p>
         <div class="flex gap-4 items-center mt-4">
-          <span class="size-10 bg-green-100 flex justify-center items-center rounded-full"><i class="fa-solid fa-phone"></i></span>
+          <span class="size-10 bg-green-100 flex justify-center items-center rounded-full"><i
+              class="fa-solid fa-phone"></i></span>
           <span class="font-bold text-gray-600">+8801609440278</span>
         </div>
         <div class="flex gap-4 items-center mt-4">
-          <span class="size-10 bg-green-100 flex justify-center items-center rounded-full"><i class="fa-solid fa-envelope"></i></span>
+          <span class="size-10 bg-green-100 flex justify-center items-center rounded-full"><i
+              class="fa-solid fa-envelope"></i></span>
           <span class="font-bold text-gray-600">sayeedmahmud343@gmail.com</span>
         </div>
       </div>
 
       <div class="lg:col-span-3 sm:col-span-6 col-span-12">
         <h1 class="text-2xl font-bold">Queck Links</h1>
-        
+
         <ul class="list-disc ml-5 leading-10">
           <li class="hover:text-green-400">Home</li>
           <li class="hover:text-green-400">Shop Grid</li>
@@ -233,7 +179,7 @@
 
       <div class="lg:col-span-3 sm:col-span-6 col-span-12">
         <h1 class="text-2xl font-bold">Categories</h1>
-        
+
         <ul class="list-disc ml-5 leading-10">
           <li class="hover:text-green-400">Vegetables</li>
           <li class="hover:text-green-400">Fresh fruits</li>
@@ -248,19 +194,25 @@
       <div class="lg:col-span-3 sm:col-span-6 col-span-12">
         <h1 class="text-2xl font-bold">Categories</h1>
         <p>Subscribe to get latest updates, offers and coupons.</p>
-        <div class="border rounded-2xl mt-4 p-0.5 flex justify-between items-center"><input type="email" placeholder="type the email" class="rounded-2xl text-xl pl-3 py-2"> <button class="bg-green-400 px-3 py-2 rounded-full text-white font-bold">Subscribe</button></div>
+        <div class="border rounded-2xl mt-4 p-0.5 flex justify-between items-center"><input type="email"
+            placeholder="type the email" class="rounded-2xl text-xl pl-3 py-2"> <button
+            class="bg-green-400 px-3 py-2 rounded-full text-white font-bold">Subscribe</button></div>
         <div class="mt-15 flex gap-5">
-          <span class="size-10 rounded-full flex justify-center items-center bg-gray-100"><a href=""><i class="fa-brands fa-facebook"></i></a></span>
-          <span class="size-10 rounded-full flex justify-center items-center bg-gray-100"><a href=""><i class="fa-brands fa-linkedin"></i></a></span>
-          <span class="size-10 rounded-full flex justify-center items-center bg-gray-100"><a href=""><i class="fa-brands fa-github"></i></a></span>
+          <span class="size-10 rounded-full flex justify-center items-center bg-gray-100"><a href=""><i
+                class="fa-brands fa-facebook"></i></a></span>
+          <span class="size-10 rounded-full flex justify-center items-center bg-gray-100"><a href=""><i
+                class="fa-brands fa-linkedin"></i></a></span>
+          <span class="size-10 rounded-full flex justify-center items-center bg-gray-100"><a href=""><i
+                class="fa-brands fa-github"></i></a></span>
         </div>
       </div>
-      
+
     </div>
 
     <hr class="opacity-10 mb-5">
     <div class="flex flex-col gap-3 md:flex-row justify-between items-center pb-6">
-      <h4><i class="fa-regular fa-copyright"></i> 2026 <span class="text-green-500 font-bold">FreshNess.</span>All Rights Reserved </h4>
+      <h4><i class="fa-regular fa-copyright"></i> 2026 <span class="text-green-500 font-bold">FreshNess.</span>All
+        Rights Reserved </h4>
 
       <div class="flex gap-5">
         <button class="bg-gray-100 px-2 py-1 uppercase rounded-4xl font-bold text-gray-500">Visa</button>
@@ -273,9 +225,9 @@
   </footer>
 
 
-<script type='module' src="./src/js/allgroceries.js"></script>
-<script type="module" src="./src/js/cardDetails.js"></script>
-<script type="module" src="./src/js/renderProducts.js"></script>
+  <script type='module' src="./src/js/allgroceries.js"></script>
+  <script type="module" src="./src/js/cardDetails.js"></script>
+
 </body>
 
 </html>

@@ -1,12 +1,24 @@
 import { scrolling } from "./Scrolling";
-import { allClick, uiUpdate,} from "./renderProducts";
+import { allClick,Click, uiUpdate,} from "./renderProducts";
+const search = window.location.pathname
+console.log(search);
+function productCount(){
+    const counting = allClick()
+    if(search ==="/allGroceries.html" ){
+        counting.visiblCount = 6
+        return counting
+    }
+    return counting 
+}
 
 
-async function allgroceries() {
+ function allgroceries() {
     const prices = document.querySelectorAll('.prices')
     scrolling();
 
-    const allClickFind = allClick()
+    const allClickFind = productCount();
+    console.log(allClickFind);
+    Click()
     uiUpdate(allClickFind);
 
       const minPrice = document.querySelector('.minPrice');

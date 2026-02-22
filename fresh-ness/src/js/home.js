@@ -1,8 +1,8 @@
 import { data } from "../data/productData.js";
 // import { ProductsCard } from "./productCard.js";
 import { scrolling } from "./Scrolling.js";
-import { CardsAll } from "./renderProducts.js";
-import { allClick } from "./renderProducts.js";
+import { CardsAllfilter } from "./renderProducts.js";
+import { Click } from "./renderProducts.js";
 
 // fruitsNav
 const totalFruits = [
@@ -98,7 +98,6 @@ export async function allJs(){
     // page scrolling 
     scrolling()
     
-    
     const totalProducts = document.getElementById('totalProducts');
     // Start Get unique categories and all item names
     if(totalProducts){
@@ -126,26 +125,26 @@ export async function allJs(){
 
 
     // ====================== productsShowing Start ==========================       
-    CardsAll()
-    allClick()
+    CardsAllfilter()
+    Click()
     // ====================== productsShowing End ==========================
     
-
-const questionBox = document.getElementById("qstBox");
-    questionBox.innerHTML = "";
-    askQuestion.map((item, index)=>{
-        questionBox.innerHTML += `
-            <div data-askqst="${index+1}" class="p-5 rounded-xl border border-green-500 bg-white mb-4">
-                <div class="qstItem flex justify-between items-center ">
-                <h3 class="qst text-xl font-bold shadow-3xl">${item.question}</h3>
-                <span class="qstCheckBox size-10 bg-gray-200 flex justify-center items-center rounded-full p-1  relative"> 
-                <span class="qstCheck absolute w-3 h-3 border-2 inline-block border-l-0 border-t-0 rotate-45 transition-transform">
-                </span> </span>
+// qeustion Card Render
+    const questionBox = document.getElementById("qstBox");
+        questionBox.innerHTML = "";
+        askQuestion.map((item, index)=>{
+            questionBox.innerHTML += `
+                <div data-askqst="${index+1}" class="p-5 rounded-xl border border-green-500 bg-white mb-4">
+                    <div class="qstItem flex justify-between items-center ">
+                    <h3 class="qst text-xl font-bold shadow-3xl">${item.question}</h3>
+                    <span class="qstCheckBox size-10 bg-gray-200 flex justify-center items-center rounded-full p-1  relative"> 
+                    <span class="qstCheck absolute w-3 h-3 border-2 inline-block border-l-0 border-t-0 rotate-45 transition-transform">
+                    </span> </span>
+                    </div>
+                    <p class="qstAns mt-8 text-xl text-gray-600 hidden">${item.ans}</p>
                 </div>
-                <p class="qstAns mt-8 text-xl text-gray-600 hidden">${item.ans}</p>
-            </div>
 
-        `}).join();
+            `}).join();
     
 
     // showQuestion
@@ -157,7 +156,7 @@ const questionBox = document.getElementById("qstBox");
                 const qstAns = qstItem.querySelector('.qstAns');
                 const qst = qstItem.querySelector('.qst');
                 const qstCheck = qstItem.querySelector('.qstCheck');
-
+                
 
                         
                 qst.classList.toggle('text-green-500');

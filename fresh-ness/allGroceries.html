@@ -40,8 +40,8 @@
           <span class="p-3 text-2xl relative"><i class="fa-regular fa-user"></i> </span>
           <span class="p-3 text-2xl relative"><i class="relative fa-regular fa-heart"><span
                 class="flex justify-center items-center size-4 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-red-500 text-[13px] ">0</span></i></span>
-          <span class="p-3 text-2xl relative"><i class="relative fa-solid fa-cart-shopping"><span
-                class="flex justify-center items-center size-4 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-green-500 text-[13px] ">0</span></i></span>
+          <span class="p-3 text-2xl relative"><i class="relative fa-solid fa-cart-shopping"><span id="cartCount"
+                class="flex justify-center items-center p-1 absolute right-[-8px] top-[-8px] text-center text-white rounded-full bg-green-500 text-[13px] ">0</span></i></span>
         </div>
       </section>
 
@@ -59,7 +59,7 @@
             </div>
             <div>
               <div class="flex overflow-hidden border rounded-xl w-[100%] ">
-                <input class="searchVal2 p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+                <input class="searchVal p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
                   placeholder="Search for products">
                 <span class="searchLoad2 bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
                     class="fa-solid fa-magnifying-glass"></i></span>
@@ -139,7 +139,7 @@
         <h5 class="font-semibold mt-1">Found <span class="countCategories text-red-500">25</span> fresh items</h5>
       </div>
       <div class="flex overflow-hidden border rounded-3xl">
-          <input class="searchVal3 p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
+          <input class="searchVal p-0.5 pl-2 border-none outline-none w-[85%] block font-bold" type="text"
             placeholder="Search for products">
           <span class="bg-amber-300 p-3 flex w-[15%] justify-center items-center "><i
               class="fa-solid fa-magnifying-glass"></i></span>
@@ -151,7 +151,7 @@
             <!-- product showing -->
        <div class="grid lg:grid-cols-12 grid-row-12 ">
           
-            <div class="col-span-6 lg:col-span-3 flex flex-col bg-pink-50 sticky rounded-2xl p-3">
+            <div class="col-span-6 h-[100vh] lg:col-span-3 flex flex-col bg-pink-50 sticky top-5 rounded-2xl p-3">
                 <div class="mb-5">
                   <div class="text-3xl font-semibold uppercase mb-4"><i class="text-2xl fa-solid fa-filter"></i> Filter</div>
                   <div class="text-lg font-semibold uppercase mb-4"><i class="text-md fa-solid fa-tag"></i> Your Budget ($)</div>
@@ -272,6 +272,7 @@
 
 
 <script type='module' src="./src/js/allgroceries.js"></script>
+<script type="module" src="./src/js/DomUI.js"></script>
 </body>
 
 </html>

@@ -1,20 +1,23 @@
 import { data } from "../data/productData";
 
+// API Call data
 const datas = await data();
+let cartCounting = 0
 
-
+// discountProduct function
 export function discountProduct(price, discount) {
     const discountPrice = (discount * price) / 100
     const discounts = price - discountPrice
     return Number(discounts.toFixed())
 }
 
+// Categories by filter
 export function categoriesFilter(products, categories = 'all') {
     if (categories === 'all') return products;
-
     return products.filter(card => card.categories === categories)
 }
 
+// inputprice by filter
 export function filterByPrice(products, min = 0, max = Infinity) {
     return products.filter(val => {
 
@@ -24,24 +27,27 @@ export function filterByPrice(products, min = 0, max = Infinity) {
     )
 }
 
+// input Text by filter
 export function searchFilter(products, searchText = "") {
     if (!searchText) return products
     return products.filter(card => card.title.toLowerCase().includes(searchText.toLowerCase()))
 }
 
+// dicending or assending by filter
 export function sortFilter(products, setSort = 'arrival') {
     const sorted = [...products]
     if (setSort === 'low') {
-        sorted.sort((a, b) => discountProduct(a.price , a.discount)-discountProduct(b.price , b.discount));
+        sorted.sort((a, b) => discountProduct(a.price, a.discount) - discountProduct(b.price, b.discount));
     } else if (setSort === 'high') {
-        sorted.sort((a, b) => discountProduct(b.price , b.discount)-discountProduct(a.price , b.discount));
+        sorted.sort((a, b) => discountProduct(b.price, b.discount) - discountProduct(a.price, b.discount));
     }
 
     return sorted
 }
 
+// render Product
 export function renderCards(products, visiblCount = 8, container) {
-    container.innerHTML = ''
+    container.innerHTML = "";
     products.slice(0, visiblCount).forEach(card => {
         const proDiscount = discountProduct(card.price, card.discount)
         container.innerHTML += `
@@ -65,7 +71,7 @@ export function renderCards(products, visiblCount = 8, container) {
                             <span>(2.4)</span>
                             </div>
                             <div class="font-bold">$${proDiscount} <del class="text-[13px]">$${card.price}</del></div>
-                            <div class="flex justify-end text-2xl px-4 hover:scale-105 transition-transform"><i class="fa-solid fa-cart-shopping"></i></div>
+                            <div class="cart flex justify-end text-2xl px-4 hover:scale-105 transition-transform"><i class="fa-solid fa-cart-shopping"></i></div>
                         </div>
                     </div>
     
@@ -74,41 +80,40 @@ export function renderCards(products, visiblCount = 8, container) {
     return products.slice(0, visiblCount)
 }
 
-export function CardsAll(option = {}) {
+
+// Cards All filter
+export function CardsAllfilter(option = {}) {
     const allProductShow = document.getElementById('allProductsShow');
     let { categories = 'all', min = 0, max = Infinity, setSort = 'arrival', searchText = "", visiblCount = 8 } = option
 
     let filtered = categoriesFilter(datas, categories);
-
     filtered = filterByPrice(filtered, min, max);
     filtered = searchFilter(filtered, searchText);
-    filtered = sortFilter(filtered, setSort)
-
-    renderCards(filtered, visiblCount, allProductShow);
-
-    return filtered
-
-}
-const readMOreBtn = document.getElementById('readMoreCards');
-export function uiUpdate(state){
-    const countCategories = document.querySelector('.countCategories');
-    
-        const result = CardsAll(state)
-        if (countCategories) {
-            countCategories.textContent = result.length
-        }
-        readMOreBtn.style.display = state.visiblCount>= result.length? "none":'block';
-
+    filtered = sortFilter(filtered, setSort);
+    if (allProductShow) {
+        renderCards(filtered, visiblCount, allProductShow);
     }
+    return filtered
+}
+
+
+// uiUpdate function
+export function uiUpdate(state) {
+    const readMOreBtn = document.getElementById('readMoreCards');
+    const countCategories = document.querySelector('.countCategories');
+
+    const result = CardsAllfilter(state)
+    if (countCategories) {
+        countCategories.textContent = result.length
+    }
+    readMOreBtn.style.display = state.visiblCount >= result.length ? "none" : 'block';
+
+};
+
+
+// allClick function
 export function allClick() {
 
-    const allProBtn = document.getElementById('allProducts');
-    const vegetableBtn = document.getElementById('vegetables');
-    const freshFrutsBtn = document.getElementById('freshFruits');
-    const dessertBtn = document.getElementById('desserts');
-    
-    
-    
     const state = {
         categories: 'all',
         min: 0,
@@ -118,79 +123,97 @@ export function allClick() {
         visiblCount: 8
     }
 
+    return state;
+}
 
+
+export function Click() {
+
+    const allProBtn = document.getElementById('allProducts');
+    const vegetableBtn = document.getElementById('vegetables');
+    const freshFrutsBtn = document.getElementById('freshFruits');
+    const dessertBtn = document.getElementById('desserts');
+    const readMOreBtn = document.getElementById('readMoreCards');
+    const data = allClick()
     // Search input function
-    const searchVal = document.querySelector('.searchVal');
-    searchVal.addEventListener('input', () => {
-        state.searchText = searchVal.value.trim()
-        uiUpdate(state)
+    const searchVal = document.querySelectorAll('.searchVal');
+    if (searchVal) {
+        searchVal.forEach((inp) => {
+            inp.addEventListener('input', () => {
+                data.searchText = inp.value.trim();
+                uiUpdate(data);
+            })
 
-    })
 
-    const searchVal2 = document.querySelector('.searchVal2');
-    if (searchVal2) {
-        searchVal2.addEventListener('input', () => {
-            state.searchText = searchVal2.value.trim()
-            uiUpdate(state)
         })
     }
 
-    const searchVal3 = document.querySelector('.searchVal3');
-    if (searchVal3) {
-        searchVal3.addEventListener('input', () => {
-            state.searchText = searchVal3.value.trim()
-            uiUpdate(state)
-        })
-    }
 
     // submenu stylish function of categories
     function setBtn(btn) {
         [allProBtn, vegetableBtn, freshFrutsBtn, dessertBtn].forEach(b =>
             b.classList.remove('after:w-[70%]', 'text-green-400')
         )
-        btn.classList.add('after:w-[70%]', 'text-green-400')
+        btn.classList.add('after:w-[70%]', 'text-green-400');
     }
 
     // productMenu Click function
-    allProBtn.addEventListener('click', () => {
-        state.visiblCount = 8
-        state.categories = 'all'
-        setBtn(allProBtn)
-        uiUpdate(state)
-        
+    if (allProBtn) {
+        allProBtn.addEventListener('click', () => {
+            data.visiblCount = 8
+            data.categories = 'all'
+            setBtn(allProBtn);
+            uiUpdate(data);
+        })
+    }
+    if (vegetableBtn) {
+        vegetableBtn.addEventListener('click', () => {
+            data.visiblCount = 8
+            data.categories = 'Vegetable'
+            setBtn(vegetableBtn);
+            uiUpdate(data);
 
-    })
-    vegetableBtn.addEventListener('click', () => {
-        state.visiblCount = 8
-        state.categories = 'Vegetable'
-        setBtn(vegetableBtn);
-        uiUpdate(state);
+        })
+    }
+    if (freshFrutsBtn) {
+        freshFrutsBtn.addEventListener('click', () => {
+            data.visiblCount = 8
+            data.categories = 'Fruit'
+            setBtn(freshFrutsBtn);
+            uiUpdate(data);
 
-    })
-    freshFrutsBtn.addEventListener('click', () => {
-        state.visiblCount = 8
-        state.categories = 'Fruit'
-        setBtn(freshFrutsBtn);
-        uiUpdate(state)
+        })
+    }
+    if (dessertBtn) {
+        dessertBtn.addEventListener('click', () => {
+            data.visiblCount = 8
+            data.categories = 'Dessert'
+            setBtn(dessertBtn);
+            uiUpdate(data);
+            readMOreBtn.classList.add('hidden')
+        })
+    }
 
-    })
-    dessertBtn.addEventListener('click', () => {
-        state.visiblCount = 8
-        state.categories = 'Dessert'
-        setBtn(dessertBtn);
-        uiUpdate(state)
-        readMOreBtn.classList.add('hidden')
-
-    })
 
     // readMorebutton click funtion
-    readMOreBtn.addEventListener('click', () => {
-        state.visiblCount += 8
-        uiUpdate(state)
+    if (readMOreBtn) {
+        readMOreBtn.addEventListener('click', () => {
+            data.visiblCount += data.visiblCount === 6 ? 6 : 8
+            uiUpdate(data);
+        })
+    }
+    console.log(data.visiblCount);
+
+    // ADD TO CART 
+    const cart = document.querySelectorAll('.cart');
+    const cartCount = document.getElementById('cartCount');
+    cart.forEach((card) => {
+        card.addEventListener('click', ()=> {
+            cartCounting++
+            cartCount.textContent = cartCounting
+        })
     })
-    return state
+    
+
 }
-
-
-
 
