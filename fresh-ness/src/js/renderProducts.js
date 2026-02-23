@@ -1,9 +1,3 @@
-import { data } from "../data/productData";
-
-// API Call data
-const datas = await data();
-
-
 // discountProduct function
 export function discountProduct(price, discount) {
     const discountPrice = (discount * price) / 100
@@ -13,14 +7,13 @@ export function discountProduct(price, discount) {
 
 // Categories by filter
 export function categoriesFilter(products, categories = 'all') {
-    if (categories === 'all') return products;
+    if(categories === 'all') return products;
     return products.filter(card => card.categories === categories)
 }
 
 // inputprice by filter
 export function filterByPrice(products, min = 0, max = Infinity) {
     return products.filter(val => {
-
         const discountPrice = discountProduct(val.price, val.discount)
         return discountPrice >= min && discountPrice <= max
     }
@@ -39,16 +32,16 @@ export function sortFilter(products, setSort = 'arrival') {
     if (setSort === 'low') {
         sorted.sort((a, b) => discountProduct(a.price, a.discount) - discountProduct(b.price, b.discount));
     } else if (setSort === 'high') {
-        sorted.sort((a, b) => discountProduct(b.price, b.discount) - discountProduct(a.price, b.discount));
+        sorted.sort((a, b) => discountProduct(b.price, b.discount) - discountProduct(a.price, a.discount));
     }
 
     return sorted
 }
 
 // render Product
-export function renderCards(products, visiblCount = 8, container) {
+export function renderCards(products, visibleCount = 8, container) {
     container.innerHTML = "";
-    products.slice(0, visiblCount).forEach(card => {
+    products.slice(0, visibleCount).forEach(card => {
         const proDiscount = discountProduct(card.price, card.discount)
         container.innerHTML += `
                     <div data-cardIndex = ${card.id} class="relative col-span-1 hover:shadow-gray-200 gap-2 border rounded-2xl shadow-2xl p-2 h-[330px]">
@@ -77,77 +70,76 @@ export function renderCards(products, visiblCount = 8, container) {
     
             `});
 
-    return products.slice(0, visiblCount)
+    return products.slice(0, visibleCount)
 }
 
 
 // Cards All filter
-export function CardsAllfilter(option = {}) {
+export function CardsAllfilter(data, option = {}) {
     const allProductShow = document.getElementById('allProductsShow');
-    let { categories = 'all', min = 0, max = Infinity, setSort = 'arrival', searchText = "", visiblCount = 8 } = option
+    let { categories = 'all', min = 0, max = Infinity, setSort = 'arrival', searchText = "", visibleCount = 8 } = option
 
-    let filtered = categoriesFilter(datas, categories);
+    let filtered = categoriesFilter(data, categories);
     filtered = filterByPrice(filtered, min, max);
     filtered = searchFilter(filtered, searchText);
     filtered = sortFilter(filtered, setSort);
     if (allProductShow) {
-        renderCards(filtered, visiblCount, allProductShow);
+        renderCards(filtered, visibleCount, allProductShow);
     }
     return filtered
 }
 
-
 // uiUpdate function
-export function uiUpdate(state) {
+export function uiUpdate(data,state) {
     const readMOreBtn = document.getElementById('readMoreCards');
     const countCategories = document.querySelector('.countCategories');
-
-    const result = CardsAllfilter(state)
+    
+    const result = CardsAllfilter(data, state)
     if (countCategories) {
         countCategories.textContent = result.length
     }
-    readMOreBtn.style.display = state.visiblCount >= result.length ? "none" : 'block';
-
+    readMOreBtn.style.display = state.visibleCount >= result.length ? "none" : 'block';
+    
 };
 
-const cartState = {cartCount:0}
-// allClick function
-export function allValues() {
 
-    const state = {
+// allClick function
+export function State() {
+    
+    let stateVal = {
         categories: 'all',
         min: 0,
         max: Infinity,
         setSort: 'arrival',
         searchText: '',
-        visiblCount: 8,
+        visibleCount: 8,
+        cartCount:0
     }
-
-    return state;
+    
+    return stateVal;
 }
 
 
-export function Click() {
-
+export function Click(data, state) {
+    
     const allProBtn = document.getElementById('allProducts');
     const vegetableBtn = document.getElementById('vegetables');
     const freshFrutsBtn = document.getElementById('freshFruits');
     const dessertBtn = document.getElementById('desserts');
     const readMOreBtn = document.getElementById('readMoreCards');
-    const data = allValues()
     // Search input function
     const searchVal = document.querySelectorAll('.searchVal');
     if (searchVal) {
         searchVal.forEach((inp) => {
             inp.addEventListener('input', () => {
-                data.searchText = inp.value.trim();
-                uiUpdate(data);
+                state.searchText = inp.value.trim();
+                uiUpdate(data, state);
             })
-
-
+            
+            
         })
     }
-
+    
     // submenu stylish function of categories
     function setBtn(btn) {
         [allProBtn, vegetableBtn, freshFrutsBtn, dessertBtn].forEach(b =>
@@ -155,59 +147,59 @@ export function Click() {
         )
         btn.classList.add('after:w-[70%]', 'text-green-400');
     }
-
+    
     // productMenu Click function
     if (allProBtn) {
         allProBtn.addEventListener('click', () => {
-            data.visiblCount = 8
-            data.categories = 'all'
+            state.visibleCount = 8
+            state.categories = 'all'
             setBtn(allProBtn);
-            uiUpdate(data);
+            uiUpdate(data, state);
         })
     }
     if (vegetableBtn) {
         vegetableBtn.addEventListener('click', () => {
-            data.visiblCount = 8
-            data.categories = 'Vegetable'
+            state.visibleCount = 8
+            state.categories = 'Vegetable'
             setBtn(vegetableBtn);
-            uiUpdate(data);
-
+            uiUpdate(data, state);
+            
         })
     }
     if (freshFrutsBtn) {
         freshFrutsBtn.addEventListener('click', () => {
-            data.visiblCount = 8
-            data.categories = 'Fruit'
+            state.visibleCount = 8
+            state.categories = 'Fruit'
             setBtn(freshFrutsBtn);
-            uiUpdate(data);
-
+            uiUpdate(data, state);
+            
         })
     }
     if (dessertBtn) {
         dessertBtn.addEventListener('click', () => {
-            data.visiblCount = 8
-            data.categories = 'Dessert'
+            state.visibleCount = 8
+            state.categories = 'Dessert'
             setBtn(dessertBtn);
-            uiUpdate(data);
+            uiUpdate(data, state);
             readMOreBtn.classList.add('hidden')
         })
     }
-
-
+    
+    
     // readMorebutton click funtion
     if (readMOreBtn) {
         readMOreBtn.addEventListener('click', () => {
-            data.visiblCount += data.visiblCount === 6 ? 6 : 8
-            uiUpdate(data);
+            state.visibleCount += state.visibleCount === 6 ? 6 : 8
+            uiUpdate(data, state);
         })
     }
-    console.log(data.visiblCount);
-
+    console.log(state.visibleCount);
+    
     // ADD TO CART COUNT DOM ELEMENT
     const allProductShow = document.getElementById('allProductsShow');
     const relatedProducts = document.getElementById('cardDetailsMain');
     const cartCount = document.getElementById('cartCount');
-
+    
     if(allProductShow){
         allProductShow.addEventListener('click', handleClick)
     }
@@ -217,16 +209,17 @@ export function Click() {
     // CLICK COUNT CART logic
     function handleClick(e){
         const target = e.target.closest('.cart');
-
+        
         if(!target) return;
-        cartState.cartCount++;
-        cartCount.textContent = cartState.cartCount
+        state.cartCount++;
+        cartCount.textContent = state.cartCount
         console.log(target);
     }
-       
     
     
-
+    
+    
 }
+
 
 

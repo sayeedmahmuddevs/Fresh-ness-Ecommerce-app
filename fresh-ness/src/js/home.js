@@ -1,8 +1,8 @@
-import { data } from "../data/productData.js";
+import { productsData } from "../data/productData.js";
 // import { ProductsCard } from "./productCard.js";
 import { scrolling } from "./Scrolling.js";
-import { CardsAllfilter } from "./renderProducts.js";
-import { Click } from "./renderProducts.js";
+import { CardsAllfilter,Click, State } from "./renderProducts.js";
+
 
 // fruitsNav
 const totalFruits = [
@@ -92,8 +92,8 @@ const askQuestion = [
 
 
 export async function allJs(){
-    const datas = await data();
-    console.log(datas);
+    const data = await productsData();
+    const state = State()
 
     // page scrolling 
     scrolling()
@@ -119,14 +119,16 @@ export async function allJs(){
 
     // function unique catergories total
     function totalCategories(val){
-        return datas.filter(item => item.categories === val).length
+        return data.filter(item => item.categories === val).length
     }
     //  End Get unique categories and all item names
 
 
-    // ====================== productsShowing Start ==========================       
-    CardsAllfilter()
-    Click()
+    // ====================== productsShowing Start ========================== 
+    
+    const dt = CardsAllfilter(data, state)
+    Click(data,  state)
+console.log(dt);
     // ====================== productsShowing End ==========================
     
 // qeustion Card Render
@@ -167,6 +169,7 @@ export async function allJs(){
             })
         })
 }
+// document.addEventListener('DOMContentLoaded', ()=> { allJs()}) 
 allJs()
 
 

@@ -1,5 +1,5 @@
 
-export async function data(){
+export async function productsData(){
     try{
         const res = await fetch('./src/data/data.json');
         const productsData = await res.json();

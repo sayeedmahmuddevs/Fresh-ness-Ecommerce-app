@@ -1,12 +1,13 @@
-import {CardsAllfilter, renderCards, Click } from "./renderProducts";
-import { discountProduct } from "./renderProducts";
+import { productsData } from "../data/productData";
+import {CardsAllfilter, renderCards, Click,State, discountProduct } from "./renderProducts";
 
-
+const data = productsData()
+const state = State()
 const cardDetails = document.getElementById('cardDetails')
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-const cardsData = CardsAllfilter();
+const cardsData = CardsAllfilter(data);
 const selectedCard = cardsData.find(c => c.id == id);
 const discount = discountProduct(selectedCard.price, selectedCard.discount)
 let counting = 1
@@ -95,6 +96,6 @@ const filteredProducts = cardsData.filter(card =>{
         card.id !== selectedCard.id
 });
 renderCards(filteredProducts, 4, relatedProducts)
-Click()
+Click(state)
 
 export default counting
