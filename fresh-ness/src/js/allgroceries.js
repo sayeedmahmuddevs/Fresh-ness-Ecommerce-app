@@ -1,9 +1,9 @@
 import { scrolling } from "./Scrolling";
-import { allClick,Click, uiUpdate,} from "./renderProducts";
+import { allValues,Click, uiUpdate,} from "./renderProducts";
 const search = window.location.pathname
 console.log(search);
 function productCount(){
-    const counting = allClick()
+    const counting = allValues()
     if(search ==="/allGroceries.html" ){
         counting.visiblCount = 6
         return counting
@@ -18,9 +18,10 @@ function productCount(){
 
     const allClickFind = productCount();
     console.log(allClickFind);
-    Click()
+    
     uiUpdate(allClickFind);
 
+    // input pricing sort
       const minPrice = document.querySelector('.minPrice');
          const maxPrice = document.querySelector('.maxPrice')
          if(minPrice && maxPrice){
@@ -35,6 +36,7 @@ function productCount(){
 
          }
 
+        // accending/decending with price sort
        prices.forEach(input => {
            input.addEventListener('click',()=>{
                prices.forEach(d => {
@@ -47,9 +49,11 @@ function productCount(){
                allClickFind.setSort = input.getAttribute('value');
                uiUpdate(allClickFind)
           
-           })
-       })
-    
+           });
+       });
+
+    // click her event
+    Click();
 
 }
 allgroceries()

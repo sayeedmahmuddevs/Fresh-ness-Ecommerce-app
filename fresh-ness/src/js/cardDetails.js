@@ -1,5 +1,6 @@
-import {CardsAllfilter, renderCards } from "./renderProducts";
+import {CardsAllfilter, renderCards, Click } from "./renderProducts";
 import { discountProduct } from "./renderProducts";
+
 
 const cardDetails = document.getElementById('cardDetails')
 
@@ -9,8 +10,6 @@ const cardsData = CardsAllfilter();
 const selectedCard = cardsData.find(c => c.id == id);
 const discount = discountProduct(selectedCard.price, selectedCard.discount)
 let counting = 1
-
-
 
 cardDetails.innerHTML = `
     <div id="" data-cardIndex = ${selectedCard.id} class="relative col-span-1 hover:shadow-gray-200 gap-10 border rounded-2xl shadow-2xl p-2 grid grid-cols-1 md:grid-cols-2">
@@ -53,7 +52,7 @@ cardDetails.innerHTML = `
                             <span class="updateValue size-6 flex justify-center items-center text-2xl font-bold">${counting}</span>
                             <span class="productIncrement size-6 flex justify-center items-center text-3xl font-bold cursor-pointer hover:text-green-500">+</span>
                         </div>
-                        <div class="flex justify-center items-center gap-5 rounded-2xl text-md lg:text-2xl hover:scale-105 bg-green-600 text-white md:px-13 px-8 py-3 font-bold cursor-pointer"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</div>
+                        <div class="cart flex justify-center items-center gap-5 rounded-2xl text-md lg:text-2xl hover:scale-105 bg-green-600 text-white md:px-13 px-8 py-3 font-bold cursor-pointer"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</div>
                         <div class="flex gap-5 text-3xl">
                             <span class="size-10 hover:text-green-500"><i class="fa-solid fa-heart"></i> </span>
                             <span class="size-10 hover:text-green-500"><i class="fa-solid fa-rotate"></i> </span>
@@ -96,5 +95,6 @@ const filteredProducts = cardsData.filter(card =>{
         card.id !== selectedCard.id
 });
 renderCards(filteredProducts, 4, relatedProducts)
+Click()
 
 export default counting

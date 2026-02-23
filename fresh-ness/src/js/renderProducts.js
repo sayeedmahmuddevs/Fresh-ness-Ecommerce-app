@@ -2,7 +2,7 @@ import { data } from "../data/productData";
 
 // API Call data
 const datas = await data();
-let cartCounting = 0
+
 
 // discountProduct function
 export function discountProduct(price, discount) {
@@ -110,9 +110,9 @@ export function uiUpdate(state) {
 
 };
 
-
+const cartState = {cartCount:0}
 // allClick function
-export function allClick() {
+export function allValues() {
 
     const state = {
         categories: 'all',
@@ -120,7 +120,7 @@ export function allClick() {
         max: Infinity,
         setSort: 'arrival',
         searchText: '',
-        visiblCount: 8
+        visiblCount: 8,
     }
 
     return state;
@@ -134,7 +134,7 @@ export function Click() {
     const freshFrutsBtn = document.getElementById('freshFruits');
     const dessertBtn = document.getElementById('desserts');
     const readMOreBtn = document.getElementById('readMoreCards');
-    const data = allClick()
+    const data = allValues()
     // Search input function
     const searchVal = document.querySelectorAll('.searchVal');
     if (searchVal) {
@@ -147,7 +147,6 @@ export function Click() {
 
         })
     }
-
 
     // submenu stylish function of categories
     function setBtn(btn) {
@@ -204,16 +203,30 @@ export function Click() {
     }
     console.log(data.visiblCount);
 
-    // ADD TO CART 
-    const cart = document.querySelectorAll('.cart');
+    // ADD TO CART COUNT DOM ELEMENT
+    const allProductShow = document.getElementById('allProductsShow');
+    const relatedProducts = document.getElementById('cardDetailsMain');
     const cartCount = document.getElementById('cartCount');
-    cart.forEach((card) => {
-        card.addEventListener('click', ()=> {
-            cartCounting++
-            cartCount.textContent = cartCounting
-        })
-    })
+
+    if(allProductShow){
+        allProductShow.addEventListener('click', handleClick)
+    }
+    if(relatedProducts){
+        relatedProducts.addEventListener('click', handleClick)
+    }
+    // CLICK COUNT CART logic
+    function handleClick(e){
+        const target = e.target.closest('.cart');
+
+        if(!target) return;
+        cartState.cartCount++;
+        cartCount.textContent = cartState.cartCount
+        console.log(target);
+    }
+       
+    
     
 
 }
+
 
