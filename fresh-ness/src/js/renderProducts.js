@@ -95,10 +95,10 @@ export function uiUpdate(data,state) {
     const countCategories = document.querySelector('.countCategories');
     
     const result = CardsAllfilter(data, state)
-    if (countCategories) {
+    if (countCategories || countCategories) {
         countCategories.textContent = result.length
+        readMOreBtn.style.display = state.visibleCount >= result.length ? "none" : 'block';
     }
-    readMOreBtn.style.display = state.visibleCount >= result.length ? "none" : 'block';
     
 };
 
@@ -215,9 +215,6 @@ export function Click(data, state) {
         cartCount.textContent = state.cartCount
         console.log(target);
     }
-    
-    
-    
     
 }
 
