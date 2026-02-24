@@ -1,6 +1,6 @@
-import { productsData } from "../data/productData";
-import { scrolling } from "./Scrolling";
-import { State, Click, uiUpdate,CardsAllfilter } from "./renderProducts";
+import { productsData } from "../data/productData.js";
+import { scrolling } from "./Scrolling.js";
+import { State, Click, uiUpdate,CardsAllfilter } from "./renderProducts.js";
 
 const data = await productsData()
 const search = window.location.pathname

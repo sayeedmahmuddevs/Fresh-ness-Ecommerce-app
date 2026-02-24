@@ -1,5 +1,5 @@
-import { productsData } from "../data/productData";
-import {CardsAllfilter, renderCards, Click,State, discountProduct } from "./renderProducts";
+import { productsData } from "../data/productData.js";
+import {CardsAllfilter, renderCards, Click,State, discountProduct } from "./renderProducts.js";
 
 const data = await productsData()
 const state = State()

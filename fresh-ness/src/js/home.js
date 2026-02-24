@@ -10,41 +10,41 @@ const totalFruits = [
         id: '1',
         categories:'Vegetable',
         name: 'Vegetables',
-        img: '/src/assets/total1.png'
+        img: './src/assets/total1.png'
 
     },
     {
         id: '2',
         name: 'Fresh Fruits',
         categories: 'Fruit',
-        img: '/src/assets/total2.png'
+        img: './src/assets/total2.png'
 
     },
     {
         id: '3',
         name: 'Desserts',
         categories:'Dessert',
-        img: '/src/assets/total3.png'
+        img: './src/assets/total3.png'
 
     },
     {
         id: '4',
         name: 'Drink & Juice',
         categories:'Drink',
-        img: '/src/assets/total4.png'
+        img: './src/assets/total4.png'
 
     },
     {
         id: '5',
         name: 'Fish & Meats',
         categories:"Meat / Pet",
-        img: '/src/assets/total5.png'
+        img: './src/assets/total5.png'
 
     },
     {
         id: '6',
         name: 'Pet & Animalsa',
-        img: '/src/assets/total6.png'
+        img: './src/assets/total6.png'
     }
 ];
 
