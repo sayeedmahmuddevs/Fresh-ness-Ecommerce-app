@@ -95,7 +95,7 @@ export function uiUpdate(data,state) {
     const countCategories = document.querySelector('.countCategories');
     
     const result = CardsAllfilter(data, state)
-    if (countCategories || countCategories) {
+    if (countCategories || readMOreBtn) {
         countCategories.textContent = result.length
         readMOreBtn.style.display = state.visibleCount >= result.length ? "none" : 'block';
     }
