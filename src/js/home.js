@@ -128,7 +128,7 @@ export async function allJs(){
     
     const dt = CardsAllfilter(data, state)
     Click(data,  state)
-console.log(dt);
+    console.log(dt);
     // ====================== productsShowing End ==========================
     
 // qeustion Card Render

@@ -11,11 +11,10 @@ function productCount() {
         counting.visibleCount = 6
         return counting
     }
-    return counting
+    return counting;
 }
 
-
-const prices = document.querySelectorAll('.prices')
+const prices = document.querySelectorAll('.prices');
 scrolling();
 
 const allClickFind = productCount();
@@ -33,7 +32,7 @@ if (minPrice && maxPrice) {
     })
     maxPrice.addEventListener('input', () => {
         allClickFind.max = Number(maxPrice.value) || Infinity;
-        uiUpdate(data, allClickFind)
+        uiUpdate(data, allClickFind);
     })
     
 }
@@ -54,7 +53,7 @@ prices.forEach(input => {
     });
 });
 
-CardsAllfilter(data, allClickFind )
+CardsAllfilter(data, allClickFind );
 
 
 
